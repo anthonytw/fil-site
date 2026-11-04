@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>fil: a remote shell that keeps your place</title>
+<meta name="description" content="fil is a remote shell for development over SSH and QUIC. Sessions survive reconnects, roaming and sleep. Coming soon.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161a1f'/%3E%3Cpath d='M10 40c9 0 9-16 18-16s9 16 18 16 8-10 8-10' fill='none' stroke='%2366d9a8' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #fbfaf7; --fg: #1b1e22; --muted: #5f6670; --line: #e3e0d8; --accent: #1f8a5f; --code: #f1efe9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121417; --fg: #e9e7e2; --muted: #9aa1aa; --line: #2a2e34; --accent: #66d9a8; --code: #1b1f24; }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); }
+  body { font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 14vh 24px 64px; }
+  .thread { display: block; width: 100%; max-width: 260px; height: auto; margin: 0 0 28px; }
+  .thread path { stroke: var(--accent); }
+  h1 { font: 600 56px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: -0.02em; margin: 0 0 10px; }
+  .motto { color: var(--muted); font-style: italic; margin: 0 0 28px; }
+  .lede { font-size: 20px; margin: 0 0 24px; }
+  ul { padding-left: 20px; margin: 0 0 32px; }
+  li { margin: 6px 0; }
+  .soon { display: inline-block; font: 600 13px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); border-radius: 99px; padding: 7px 12px; margin: 0 0 18px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent); }
+  code { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code); padding: 2px 6px; border-radius: 5px; word-break: break-all; }
+  footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  footer p { margin: 0 0 8px; }
+</style>
+</head>
+<body>
+<main>
+  <svg class="thread" viewBox="0 0 260 40" aria-hidden="true"><path d="M4 30c24 0 24-22 48-22s24 22 48 22 24-22 48-22 24 22 48 22 24-22 48-22" fill="none" stroke-width="4" stroke-linecap="round"/></svg>
+  <h1>fil</h1>
+  <p class="motto"><span lang="fr">Reprendre le fil</span>: to pick up the thread where you left off.</p>
+  <p class="lede">A remote shell for development over SSH that keeps your place.</p>
+  <ul>
+    <li>Sessions that survive reconnects, roaming and sleep, with your terminal's own scrollback.</li>
+    <li>Reattach after a crash, or take a session over from another machine.</li>
+    <li>Port forwards that stay open across reconnects.</li>
+    <li>Direct QUIC, or a plain SSH pipe when UDP is blocked.</li>
+  </ul>
+  <span class="soon">Coming soon</span>
+  <p>The first release, 0.1.0, is on its way. Until then, the code and the design are on <a href="https://github.com/anthonytw/fil">GitHub</a>.</p>
+  <footer>
+    <p>Releases are signed. Release signing key (ED25519) fingerprint:<br><code>SHA256:sEx4DtGI9gdaVhgsYWwuIC0xwkYJ8BLIVhVktPHINvQ</code></p>
+    <p>Free software under the GPL-3.0-or-later. No cookies, no scripts, no tracking on this page.</p>
+  </footer>
+</main>
+</body>
+</html>
