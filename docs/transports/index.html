@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><script src="/theme.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; manifest-src 'none'"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)"><title>Reconnects and transports · fil</title><meta name="description" content="fil can carry a session over two transports and moves between them by itself."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://fil.anthonywertz.com/docs/transports/"><link rel="preload" href="/fonts/ibm-plex-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/_astro/_slug_.KgzBTcln.css"></head> <body> <a class="skip" href="#main">Skip to content</a> <header class="site-header"> <div class="wrap"> <a class="brand" href="/" aria-label="fil, home"><svg class="thread" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 40c10 0 10-16 20-16s10 16 20 16 12-10 12-10" fill="none" stroke-width="6" stroke-linecap="round"></path></svg>fil</a> <nav class="nav" aria-label="Main"> <a href="/docs/" aria-current="page">Guide</a><a href="/man/">Manual</a><a href="/security/">Security</a><a href="/changelog/">Changelog</a> <a class="gh-link" href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer"><svg class="gh" viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub</a> <button class="theme-toggle" type="button" data-theme-toggle data-state="auto" hidden aria-label="Theme: Auto. Activate to switch to Light." title="Theme: Auto (follows your device). Click to change."> <svg class="i-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5v17"></path><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" stroke="none"></path></svg> <svg class="i-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"></path></svg> <svg class="i-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg> <span class="theme-label">Auto</span> </button> </nav> </div> </header> <main id="main"> <div class="wrap docs"> <details class="docs-toc-mobile"> <summary>Guide contents</summary> <nav aria-label="Guide"> <a href="/docs/">Overview</a> <div class="docs-group"> <p class="docs-group-title">Start here</p> <ul><li><a href="/docs/install/">Install</a></li><li><a href="/docs/quick-start/">Quick start</a></li><li><a href="/docs/sessions/">Sessions, detach and takeover</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Using fil</p> <ul><li><a href="/docs/transports/" aria-current="page">Reconnects and transports</a></li><li><a href="/docs/forwards/">Forwards and fil ports</a></li><li><a href="/docs/agent/">The agent</a></li><li><a href="/docs/compared/">fil compared with ssh, ET and mosh</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Configuration</p> <ul><li><a href="/docs/config/">config.toml</a></li><li><a href="/docs/daemon/">daemon.toml</a></li><li><a href="/docs/policy/">/etc/fil/policy.toml</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Trust and trouble</p> <ul><li><a href="/docs/security-privacy/">Security and privacy</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul> </div> </nav> </details> <aside class="docs-side"> <nav aria-label="Guide"> <a href="/docs/">Overview</a> <div class="docs-group"> <p class="docs-group-title">Start here</p> <ul><li><a href="/docs/install/">Install</a></li><li><a href="/docs/quick-start/">Quick start</a></li><li><a href="/docs/sessions/">Sessions, detach and takeover</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Using fil</p> <ul><li><a href="/docs/transports/" aria-current="page">Reconnects and transports</a></li><li><a href="/docs/forwards/">Forwards and fil ports</a></li><li><a href="/docs/agent/">The agent</a></li><li><a href="/docs/compared/">fil compared with ssh, ET and mosh</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Configuration</p> <ul><li><a href="/docs/config/">config.toml</a></li><li><a href="/docs/daemon/">daemon.toml</a></li><li><a href="/docs/policy/">/etc/fil/policy.toml</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Trust and trouble</p> <ul><li><a href="/docs/security-privacy/">Security and privacy</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul> </div> <div class="docs-group"> <p class="docs-group-title">Reference</p> <ul><li><a href="/man/">Manual pages</a></li><li><a href="/changelog/">Changelog</a></li></ul> </div> </nav> </aside> <article class="docs-main prose"> <header class="docs-head"> <p class="eyebrow">Using fil</p> <h1>Reconnects and transports</h1> </header>  <p>fil can carry a session over two transports and moves between them by itself.</p>
+<table>
+<thead>
+<tr>
+<th>Transport</th>
+<th>What it is</th>
+<th>Needs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>pipe</strong></td>
+<td>the output of <code>ssh -T -- HOST fil server --stdio</code>: your ssh login is the connection</td>
+<td>only what ssh needs</td>
+</tr>
+<tr>
+<td><strong>direct</strong></td>
+<td>QUIC over UDP, straight to the daemon on the host</td>
+<td>a UDP port on the host that your client can reach</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-an-attach-goes">How an attach goes</h2>
+<ol>
+<li>fil runs ssh and attaches over the pipe. The session starts at once, with no extra round trips. This is the only ssh login of an attach, so Touch ID, passwords and host-key questions work as in ssh.</li>
+<li>The host’s reply carries a UDP port and the fingerprint of the daemon’s certificate. In the background, your client dials QUIC. If that works, it moves the session to QUIC and closes the pipe.</li>
+<li>If UDP is blocked, the session stays on the pipe, and fil tries QUIC again from time to time and right after a network change.</li>
+</ol>
+<h2 id="reconnecting">Reconnecting</h2>
+<ul>
+<li>Both transports send a heartbeat every second. A link that is silent for five seconds is declared dead.</li>
+<li><strong>On QUIC,</strong> a change of your IP address (Wi-Fi to a phone, a new network) is absorbed without a new handshake. If the connection is gone altogether, for example after the laptop slept, the client makes a new QUIC handshake with its key from memory. <strong>No ssh is involved.</strong></li>
+<li><strong>If QUIC can’t be re-established</strong> within a few seconds, fil runs the pipe again, which is a new ssh login. In the background that login can’t ask you anything: if it needs a password, passphrase or host-key answer, the status line says “ssh needs an interactive login: detach (~.) and run fil again”, and fil keeps retrying so an agent you unlock elsewhere recovers it.</li>
+<li>Retries back off, with jitter. A link that dies right after coming up counts as a failure, so a flapping network slows fil down instead of making it cycle.</li>
+<li>Whichever transport carries it, the client says “resume this session from byte N” and the daemon sends everything after it.</li>
+</ul>
+<p>While the link is down, the client draws a short inverse-video status near the edge of the screen farthest from the cursor, and removes it when the link returns, leaving the screen and scrollback as they were.</p>
+<h3 id="typing-while-disconnected">Typing while disconnected</h3>
+<p>Keystrokes you type while disconnected are held in memory, up to a cap (<code>offline_input.buffer</code>, 4 KiB by default; <code>0</code> drops them), and sent when the link returns. The status overlay says how much is held and how much was dropped. With <code>offline_input.confirm = "after 10s"</code>, a long outage makes fil show what you typed and ask before sending, so a Ctrl-C typed in a long outage can’t land late by surprise. <code>offline_input.log</code> keeps everything typed while disconnected in a file or a command; it is <strong>off by default</strong> because it can capture passwords. See <a href="/docs/config/"><code>config.toml</code></a>.</p>
+<h2 id="choosing-a-transport">Choosing a transport</h2>
+<p><code>transport</code> in your <a href="/docs/config/">config</a>, or <code>--transport</code> for one attach:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auto</code> (default)</td>
+<td>the pipe first, then QUIC</td>
+</tr>
+<tr>
+<td><code>pipe</code></td>
+<td>ssh only; fil never dials UDP</td>
+</tr>
+<tr>
+<td><code>direct</code></td>
+<td>as <code>auto</code>, and after QUIC is lost an ssh re-login waits 10 seconds for QUIC to come back</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-sh">fil devbox --transport pipe
+</code></pre>
+<h2 id="udp-and-firewalls">UDP and firewalls</h2>
+<p>Direct mode uses <strong>one UDP port per user on the host</strong>, not one per session. The daemon picks it from <code>60000</code> to <code>61000</code> inclusive, starting at a random point; that is the range mosh uses, so a host already open for mosh works unchanged. In <code>daemon.toml</code> you can change the range (<code>port_range</code>) and the address it binds (<code>bind</code>); see <a href="/docs/daemon/"><code>daemon.toml</code></a>.</p>
+<ul>
+<li><strong>Open UDP 60000-61000 to the host</strong> (or the range you set) for direct mode. Without it, fil stays on the pipe and works, with ssh’s behavior on a bad network instead of QUIC’s.</li>
+<li><strong>The client dials the name or address ssh would use:</strong> for the default pipe, the host name that <code>ssh -G HOST</code> reports, so an alias from <code>~/.ssh/config</code> works. For a host behind <code>ProxyJump</code> or <code>ProxyCommand</code>, and for any custom <code>pipe</code>, fil does <strong>not</strong> dial unless you set <code>direct.address</code> for that host: the name belongs to the jump host, and a lookup would tell your network’s resolver where you are going.</li>
+<li><strong>No UDP at all on the host:</strong> an admin can switch direct mode off (<code>direct = false</code> in <a href="/docs/policy/"><code>policy.toml</code></a>, or <code>direct = false</code> in your own <code>daemon.toml</code>). Then no UDP port is opened and every client stays on the pipe.</li>
+<li><strong>Nothing is trusted on first use.</strong> The daemon’s certificate fingerprint arrives over the ssh login and is pinned; the client authenticates with a key made in memory for this attach and registered over the same login. Anything else that reaches the port is dropped. See <a href="/docs/security-privacy/">security and privacy</a>.</li>
+</ul>
+<h2 id="a-custom-pipe">A custom pipe</h2>
+<p><code>pipe</code> in your config is a command whose stdin and stdout reach <code>fil server --stdio</code> on the host. The default is <code>ssh -T -- HOST fil server --stdio</code>; it can be <code>kubectl exec -i</code>, <code>docker exec -i</code>, <code>tailscale ssh</code> and the like. A custom pipe runs as configured. It is not dialed over UDP unless you set <code>direct.address</code>, and fil never installs through it.</p>  <nav class="docs-pager" aria-label="Previous and next page"> <a class="prev" href="/docs/sessions/"><span class="muted">Previous</span>Sessions, detach and takeover</a> <a class="next" href="/docs/forwards/"><span class="muted">Next</span>Forwards and fil ports</a> </nav> <p class="docs-source">This page is <a href="https://github.com/anthonytw/fil/blob/v0.2.0/docs/user/transports.md" target="_blank" rel="noopener noreferrer"><code>docs/user/transports.md</code></a> in the fil repository, as of fil 0.2.0. Corrections go there.</p> </article> </div> </main> <footer class="site-footer"> <div class="wrap"> <nav aria-label="Footer"> <a href="/docs/">Guide</a> <a href="/docs/install/">Install</a> <a href="/man/">Manual pages</a> <a href="/security/">Security and release keys</a> <a href="/changelog/">Changelog</a> <a href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer">Source on GitHub</a> </nav> <span>Free software under the <a href="https://github.com/anthonytw/fil/blob/v0.2.0/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0-or-later</a>. No cookies, no tracking, nothing loaded from other sites.</span> </div> </footer> </body></html>

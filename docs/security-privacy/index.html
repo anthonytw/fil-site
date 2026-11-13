@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><script src="/theme.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; manifest-src 'none'"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)"><title>Security and privacy · fil</title><meta name="description" content="This page says in plain words what fil trusts, what it exposes, and what it records about you. The rules behind it are in the project's DESIGN.md (sections 11 and 11.1); every release is checked against them."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://fil.anthonywertz.com/docs/security-privacy/"><link rel="preload" href="/fonts/ibm-plex-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/_astro/_slug_.KgzBTcln.css"></head> <body> <a class="skip" href="#main">Skip to content</a> <header class="site-header"> <div class="wrap"> <a class="brand" href="/" aria-label="fil, home"><svg class="thread" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 40c10 0 10-16 20-16s10 16 20 16 12-10 12-10" fill="none" stroke-width="6" stroke-linecap="round"></path></svg>fil</a> <nav class="nav" aria-label="Main"> <a href="/docs/" aria-current="page">Guide</a><a href="/man/">Manual</a><a href="/security/">Security</a><a href="/changelog/">Changelog</a> <a class="gh-link" href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer"><svg class="gh" viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub</a> <button class="theme-toggle" type="button" data-theme-toggle data-state="auto" hidden aria-label="Theme: Auto. Activate to switch to Light." title="Theme: Auto (follows your device). Click to change."> <svg class="i-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5v17"></path><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" stroke="none"></path></svg> <svg class="i-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"></path></svg> <svg class="i-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg> <span class="theme-label">Auto</span> </button> </nav> </div> </header> <main id="main"> <div class="wrap docs"> <details class="docs-toc-mobile"> <summary>Guide contents</summary> <nav aria-label="Guide"> <a href="/docs/">Overview</a> <div class="docs-group"> <p class="docs-group-title">Start here</p> <ul><li><a href="/docs/install/">Install</a></li><li><a href="/docs/quick-start/">Quick start</a></li><li><a href="/docs/sessions/">Sessions, detach and takeover</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Using fil</p> <ul><li><a href="/docs/transports/">Reconnects and transports</a></li><li><a href="/docs/forwards/">Forwards and fil ports</a></li><li><a href="/docs/agent/">The agent</a></li><li><a href="/docs/compared/">fil compared with ssh, ET and mosh</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Configuration</p> <ul><li><a href="/docs/config/">config.toml</a></li><li><a href="/docs/daemon/">daemon.toml</a></li><li><a href="/docs/policy/">/etc/fil/policy.toml</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Trust and trouble</p> <ul><li><a href="/docs/security-privacy/" aria-current="page">Security and privacy</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul> </div> </nav> </details> <aside class="docs-side"> <nav aria-label="Guide"> <a href="/docs/">Overview</a> <div class="docs-group"> <p class="docs-group-title">Start here</p> <ul><li><a href="/docs/install/">Install</a></li><li><a href="/docs/quick-start/">Quick start</a></li><li><a href="/docs/sessions/">Sessions, detach and takeover</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Using fil</p> <ul><li><a href="/docs/transports/">Reconnects and transports</a></li><li><a href="/docs/forwards/">Forwards and fil ports</a></li><li><a href="/docs/agent/">The agent</a></li><li><a href="/docs/compared/">fil compared with ssh, ET and mosh</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Configuration</p> <ul><li><a href="/docs/config/">config.toml</a></li><li><a href="/docs/daemon/">daemon.toml</a></li><li><a href="/docs/policy/">/etc/fil/policy.toml</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Trust and trouble</p> <ul><li><a href="/docs/security-privacy/" aria-current="page">Security and privacy</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul> </div> <div class="docs-group"> <p class="docs-group-title">Reference</p> <ul><li><a href="/man/">Manual pages</a></li><li><a href="/changelog/">Changelog</a></li></ul> </div> </nav> </aside> <article class="docs-main prose"> <header class="docs-head"> <p class="eyebrow">Trust and trouble</p> <h1>Security and privacy</h1> </header>  <p>This page says in plain words what fil trusts, what it exposes, and what it records about you. The rules behind it are in the project’s <code>DESIGN.md</code> (sections 11 and 11.1); every release is checked against them.</p>
+<h2 id="what-fil-trusts">What fil trusts</h2>
+<p><strong>SSH is the root of trust.</strong> fil adds no accounts, no key registry and no identity system of its own. An attach starts with an ordinary ssh login as you; everything ssh does to authenticate applies.</p>
+<p>Four rules hold for every fil feature:</p>
+<ol>
+<li>It needs no root on the host, no system service and nothing setuid.</li>
+<li>It keeps no secrets at rest. The key that authenticates a direct connection is made in your client’s memory for one attach, is bound to the one session it was made for, and is revoked when you detach, when someone takes the session over, and when the session ends. Crash recovery deliberately goes through a fresh login. <strong>The one exception you can turn on</strong> is the offline-input log (below).</li>
+<li>Its attack surface is small. Pipe mode opens no port. Direct mode adds exactly one authenticated UDP port per user.</li>
+<li>The commands fil runs on the host are fixed. Over ssh they are <code>fil server --stdio</code>, and one constant install command that holds only the build’s version and wire; neither is ever built from your input, because ssh passes its command to the remote shell as a string. Session names travel inside the protocol and are validated at both ends.</li>
+</ol>
+<h2 id="who-could-reach-what">Who could reach what</h2>
+<table>
+<thead>
+<tr>
+<th>Who</th>
+<th>What they could reach</th>
+<th>Protection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anyone on the network</td>
+<td>sshd; the UDP port, when direct mode is on</td>
+<td>OpenSSH as before. The QUIC handshake succeeds only with the per-attach client key registered over the ssh login. Everything else is dropped without an answer; floods are rate-limited.</td>
+</tr>
+<tr>
+<td>A man in the middle</td>
+<td>the direct connection</td>
+<td>The client pins the daemon’s certificate fingerprint, received over the ssh login. Nothing is trusted on first use.</td>
+</tr>
+<tr>
+<td>Someone who steals a client key</td>
+<td>the session</td>
+<td>The key exists only in the memory of the client, for one attach, and is revoked on detach and takeover.</td>
+</tr>
+<tr>
+<td>Other users on the host</td>
+<td>the daemon’s socket</td>
+<td><code>/tmp/fil-$UID/</code> is yours and mode 0700; the daemon refuses a directory made by someone else, and checks every connection’s user.</td>
+</tr>
+<tr>
+<td>Other users on the host</td>
+<td>your <code>-R</code> ports on <code>127.0.0.1</code></td>
+<td>Reachable by every user there, as with <code>ssh -R</code>. <code>remote_peers = "same-user"</code> in <a href="/docs/daemon/"><code>daemon.toml</code></a> narrows it.</td>
+</tr>
+<tr>
+<td>The host using your agent</td>
+<td>signatures</td>
+<td>Off by default; see <a href="/docs/agent/">the agent</a>.</td>
+</tr>
+<tr>
+<td>The host’s admin</td>
+<td>what you forward</td>
+<td>fil respects their sshd settings and <code>policy.toml</code>; see <a href="/docs/policy/">for host admins</a>. A courtesy, not a boundary.</td>
+</tr>
+<tr>
+<td>A laptop waking up later</td>
+<td>your session</td>
+<td>A client holding an old copy of the session is refused and asked before it takes the session back. It never steals it silently.</td>
+</tr>
+<tr>
+<td>A stolen laptop disk</td>
+<td>the offline-input log, if you turned it on</td>
+<td>No tokens or keys are stored on disk.</td>
+</tr>
+<tr>
+<td>Whatever records or shares your terminal (its scrollback, a screen recorder, a shared screen)</td>
+<td>a secret you type while <a href="https://github.com/anthonytw/fil/blob/v0.2.0/docs/user/README.md#predictive-echo" target="_blank" rel="noopener noreferrer">predictive echo</a> is on (the default from 0.2.0)</td>
+<td>Nothing is predicted once fil has seen a password prompt (canonical mode, echo off), and a guess is drawn only after the host has echoed earlier keys the way fil expected. Four rare cases can still draw typed keys: a raw-mode program that starts reading a secret on an ordinary key without a mode change or a prompt (about one round trip of keys); a password typed ahead of its prompt (the round trip before fil learns of the prompt); output that equals the typed keys (an asterisk mask’s <code>*</code>, a PIN prompt that echoes <code>1</code> for a typed <code>1</code>); and a secret prompt drawn only right of the cursor, only by attributes, or drawn and erased before fil looks. A drawn guess has reached the terminal even if it is erased at once. Accepted; <code>predict = "off"</code> for a host is the way out.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Out of scope:</strong> root on the host, a compromised client machine, and the terminal emulator’s own escape-sequence handling. fil passes bytes through exactly as ssh does.</p>
+<h2 id="what-fil-reveals-about-you-privacy">What fil reveals about you (privacy)</h2>
+<ol>
+<li><strong>Nothing leaves your machines.</strong> fil talks only to the hosts you point it at, through the pipe command you chose. There is no telemetry, no update check, no crash reporting and no third-party service.</li>
+<li><strong>Logs record what fil does, not what you do.</strong> No log at any level has terminal output, keystrokes, command lines, environment variables or offline input. Predictive echo logs only whether it is on (one line per run) and, at <code>debug</code>, counts of its guesses when the run ends, never a key or a guessed character. Identifying details (host names, addresses, user names, session names, paths) are kept to a minimum: session names and host labels are logged at <code>debug</code> only. Error lines can still carry a path or other detail from the operating system’s message, for example when a file can’t be opened. Logs are private to you (files 0600, directories 0700), rotated at 4 MiB or a week, and deleted a week after their last write, so nothing older than about two weeks stays.</li>
+<li><strong>Nothing is kept that you didn’t ask for.</strong> A session’s output, history and snapshots are in the daemon’s memory only. The one thing that can keep what you typed is the <strong>offline-input log</strong> (a file, or a command you name that receives the bytes), which is off by default because it can capture passwords. When you turn it on it is mode 0600, rotated at 1 MiB and at 7 days, deleted a week after its last write, and refused if its directory is writable by others. It is tidied at the start of every run even when the log is off. Predictive echo keeps nothing on disk: its guesses exist only in the client’s memory and on your screen, and so in anything that records your screen (above).</li>
+<li><strong>Others see as little as possible.</strong>
+<ul>
+<li>On the network, the TLS name is a fixed <code>fil.invalid</code>, and the daemon’s certificate carries no host or user name.</li>
+<li>fil does not hide <strong>when</strong> you type. Your keys go to the host as you type them, on either transport, so someone watching the encrypted traffic can see the rhythm of your typing, at a password prompt too. mosh does the same. OpenSSH hides it since 9.5 (<code>ObscureKeystrokeTiming</code>: keys sent at fixed intervals, with decoys), but only for a session with a terminal, such as <code>ssh -tt</code>; fil’s ssh pipe is <code>ssh -T</code>, without one. With <code>predict</code> at <code>adaptive</code> or <code>always</code> (even on a fast link, where no guess is shown), the daemon also answers each stretch of typing with an echo acknowledgment about 50 ms after it, even where nothing is echoed, such as a password prompt, so the traffic from the host repeats that rhythm. With <code>predict = "off"</code>, fil’s own acknowledgments at a prompt that does not echo are grouped over 100 ms, but that does not hide your typing: the keys themselves still go up as you type them, and the transport (QUIC, or TCP under ssh) still acknowledges each packet. <code>off</code> is not a timing protection.</li>
+<li>Your other clients see the host label of the machine that attached, which you can set. It is never sent to anyone else.</li>
+<li>The host never learns a <code>-R</code> target on your network, nor a <code>-L</code> or <code>-D</code> bind that is your machine’s LAN address.</li>
+<li>The remote session’s environment drops what describes the login that happened to start the daemon: <code>SSH_CONNECTION</code>, <code>SSH_CLIENT</code>, <code>SSH_TTY</code>, the login’s agent, X11 and Kerberos variables, <code>XDG_SESSION_*</code>, a local terminal’s window and tab identifiers (<code>TERM_SESSION_ID</code>, <code>KITTY_WINDOW_ID</code> and the like, which a daemon started by hand would inherit), and similar. The stable <code>SSH_AUTH_SOCK</code> path does contain the session’s name, as <code>FIL_SESSION</code> already does; a tool that uploads its environment could carry it off the host.</li>
+<li>Session names stay out of systemd unit names and descriptions, which other local users and the journal can read.</li>
+</ul>
+</li>
+<li><strong>No surprises on the host.</strong> fil creates nothing there beyond its state directory (<code>~/.local/state/fil</code>), its socket directory under <code>/tmp</code>, and, if you install through fil, <code>~/.local/share/fil/&#x3C;version>-w&#x3C;wire>/</code> (0700). It removes what it no longer needs.</li>
+</ol>
+<h3 id="where-fil-writes-on-your-machine">Where fil writes on your machine</h3>
+<ul>
+<li><code>~/.local/state/fil/client.log</code>, the client’s log. <code>FIL_LOG=debug</code> adds detail, including the identifying details above.</li>
+<li>The offline-input log, if you set <code>offline_input.log</code>.</li>
+</ul>
+<p>Predictive echo writes nothing there.</p>
+<p>Your config is <code>~/.config/fil/config.toml</code> and is yours; fil only reads it.</p>  <nav class="docs-pager" aria-label="Previous and next page"> <a class="prev" href="/docs/policy/"><span class="muted">Previous</span>/etc/fil/policy.toml</a> <a class="next" href="/docs/troubleshooting/"><span class="muted">Next</span>Troubleshooting</a> </nav> <p class="docs-source">This page is <a href="https://github.com/anthonytw/fil/blob/v0.2.0/docs/user/security-privacy.md" target="_blank" rel="noopener noreferrer"><code>docs/user/security-privacy.md</code></a> in the fil repository, as of fil 0.2.0. Corrections go there.</p> </article> </div> </main> <footer class="site-footer"> <div class="wrap"> <nav aria-label="Footer"> <a href="/docs/">Guide</a> <a href="/docs/install/">Install</a> <a href="/man/">Manual pages</a> <a href="/security/">Security and release keys</a> <a href="/changelog/">Changelog</a> <a href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer">Source on GitHub</a> </nav> <span>Free software under the <a href="https://github.com/anthonytw/fil/blob/v0.2.0/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0-or-later</a>. No cookies, no tracking, nothing loaded from other sites.</span> </div> </footer> </body></html>

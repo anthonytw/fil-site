@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><script src="/theme.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; manifest-src 'none'"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)"><title>fil(1) · fil</title><meta name="description" content="fil(1): the fil command line, its subcommands and options."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://fil.anthonywertz.com/man/fil/"><link rel="preload" href="/fonts/ibm-plex-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/_astro/_slug_.KgzBTcln.css"></head> <body> <a class="skip" href="#main">Skip to content</a> <header class="site-header"> <div class="wrap"> <a class="brand" href="/" aria-label="fil, home"><svg class="thread" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 40c10 0 10-16 20-16s10 16 20 16 12-10 12-10" fill="none" stroke-width="6" stroke-linecap="round"></path></svg>fil</a> <nav class="nav" aria-label="Main"> <a href="/docs/">Guide</a><a href="/man/" aria-current="page">Manual</a><a href="/security/">Security</a><a href="/changelog/">Changelog</a> <a class="gh-link" href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer"><svg class="gh" viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub</a> <button class="theme-toggle" type="button" data-theme-toggle data-state="auto" hidden aria-label="Theme: Auto. Activate to switch to Light." title="Theme: Auto (follows your device). Click to change."> <svg class="i-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5v17"></path><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" stroke="none"></path></svg> <svg class="i-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"></path></svg> <svg class="i-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg> <span class="theme-label">Auto</span> </button> </nav> </div> </header> <main id="main"> <div class="wrap page"><article class="prose man"> <p class="eyebrow">Manual page</p> <h1><code>fil(1)</code></h1> <div class="head" role="doc-pageheader" aria-label="Manual header
+  line"><span class="head-ltitle">FIL(1)</span> <span class="head-vol">fil
+  manual</span> <span class="head-rtitle">FIL(1)</span></div>
+<main class="manual-text">
+<section class="Sh">
+<h2 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h2>
+<p class="Pp">fil - A remote shell that keeps your place: reconnect, detach and
+    reattach</p>
+</section>
+<section class="Sh">
+<h2 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h2>
+<p class="Pp"><b>fil</b> [<b>-L</b> <i>SPEC</i>]... [<b>-R</b> <i>SPEC</i>]...
+    [<b>-D</b> <i>SPEC</i>]... [<b>-A</b>|<b>-a</b>] [<b>--transport</b>
+    <i>MODE</i>] [<b>--config</b> <i>FILE</i>] <i>HOST</i> [<i>SESSION</i>]
+  <br/>
+  <b>fil</b> <i>COMMAND</i> ...</p>
+</section>
+<section class="Sh">
+<h2 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h2>
+<p class="Pp">A remote shell that keeps your place: reconnect, detach and
+    reattach</p>
+</section>
+<section class="Sh">
+<h2 class="Sh" id="OPTIONS"><a class="permalink" href="#OPTIONS">OPTIONS</a></h2>
+<dl class="Bl-tag">
+  <dt id="L"><a class="permalink" href="#L"><b>-L</b>
+    <i>&lt;SPEC&gt;</i></a></dt>
+  <dd>Listen here, connect from the host: [BIND:]PORT:HOST:HOSTPORT, or PORT for
+      the same port on the host's localhost. A bare port binds loopback; * or an
+      empty BIND is every interface. Repeatable</dd>
+  <dt id="R"><a class="permalink" href="#R"><b>-R</b>
+    <i>&lt;SPEC&gt;</i></a></dt>
+  <dd>Listen on the host, connect from here: [BIND:]PORT:HOST:HOSTPORT, or PORT
+      for the same port on this machine's localhost (not ssh's reverse SOCKS
+      proxy). PORT 0 asks the host for a free port. Repeatable</dd>
+  <dt id="D"><a class="permalink" href="#D"><b>-D</b>
+    <i>&lt;SPEC&gt;</i></a></dt>
+  <dd>A SOCKS proxy here that connects from the host: [BIND:]PORT.
+    Repeatable</dd>
+  <dt id="A"><a class="permalink" href="#A"><b>-A</b></a></dt>
+  <dd>Relay your ssh-agent to the session while you are attached (the config's
+      agent = &quot;confirm&quot; stays &quot;confirm&quot;)</dd>
+  <dt id="a"><a class="permalink" href="#a"><b>-a</b></a></dt>
+  <dd>Do not relay the agent, whatever the config says (the last of -A and -a
+      wins, as in ssh)</dd>
+  <dt id="transport"><a class="permalink" href="#transport"><b>--transport</b>
+    <i>&lt;MODE&gt;</i></a></dt>
+  <dd>How to reach the host: auto (the pipe first, then QUIC), pipe (ssh only)
+      or direct (QUIC once attached)
+    <p class="Pp"><i>Possible values:</i></p>
+  </dd>
+</dl>
+<div class="Bd-indent">
+<ul class="Bl-bullet">
+  <li>auto</li>
+  <li>pipe</li>
+  <li>direct</li>
+</ul>
+</div>
+<dl class="Bl-tag">
+  <dt id="predict"><a class="permalink" href="#predict"><b>--predict</b>
+    <i>&lt;MODE&gt;</i></a></dt>
+  <dd>Predictive echo for this run, over the config's predict setting: off,
+      adaptive (the default: guesses shown only on a slow link) or always
+    <p class="Pp"><i>Possible values:</i></p>
+  </dd>
+</dl>
+<div class="Bd-indent">
+<ul class="Bl-bullet">
+  <li>off</li>
+  <li>adaptive</li>
+  <li>always</li>
+</ul>
+</div>
+<dl class="Bl-tag">
+  <dt id="config"><a class="permalink" href="#config"><b>--config</b>
+    <i>&lt;FILE&gt;</i></a></dt>
+  <dd>Read this config file instead of ~/.config/fil/config.toml ($FIL_CONFIG
+      also works)</dd>
+  <dt id="h"><a class="permalink" href="#h"><b>-h</b>, <b>--help</b></a></dt>
+  <dd>Print help</dd>
+  <dt>&lt;<i>HOST</i>&gt;</dt>
+  <dd>The host: a name or alias for ssh, user@name, or a name from your
+    config</dd>
+  <dt>[<i>SESSION</i>]</dt>
+  <dd>The session to attach to; it is created if it does not exist</dd>
+</dl>
+</section>
+<section class="Sh">
+<h2 class="Sh" id="COMMANDS"><a class="permalink" href="#COMMANDS">COMMANDS</a></h2>
+<section class="Ss">
+<h3 class="Ss" id="fil_ls"><a class="permalink" href="#fil_ls">fil ls</a></h3>
+<p class="Pp">List the sessions on HOST</p>
+<p class="Pp">Usage: <b>fil ls [OPTIONS] &lt;HOST&gt;</b></p>
+</section>
+<section class="Ss">
+<h3 class="Ss" id="fil_kill"><a class="permalink" href="#fil_kill">fil
+  kill</a></h3>
+<p class="Pp">End a session: its shell and everything it started are killed</p>
+<p class="Pp">Usage: <b>fil kill [OPTIONS] &lt;HOST&gt; &lt;SESSION&gt;</b></p>
+</section>
+<section class="Ss">
+<h3 class="Ss" id="fil_detach"><a class="permalink" href="#fil_detach">fil
+  detach</a></h3>
+<p class="Pp">Detach whoever is attached to a session; it keeps running (inside
+    a session, with no arguments: this one)</p>
+<p class="Pp">Usage: <b>fil detach [OPTIONS] [HOST] [SESSION]</b></p>
+</section>
+<section class="Ss">
+<h3 class="Ss" id="fil_forward"><a class="permalink" href="#fil_forward">fil
+  forward</a></h3>
+<p class="Pp">Add a forward to a running session, or remove one. The attached
+    client asks its user before it listens or connects for a forward added this
+    way</p>
+<p class="Pp">Usage: <b>fil forward [OPTIONS] [HOST] [SESSION]</b></p>
+<dl class="Bl-tag">
+  <dt id="HOST"><a class="permalink" href="#HOST"><i>HOST</i></a></dt>
+  <dd>The host the session runs on. Left out inside a session: the session is
+      $FIL_SESSION</dd>
+  <dt id="SESSION"><a class="permalink" href="#SESSION"><i>SESSION</i></a></dt>
+  <dd>The session (default: main)</dd>
+  <dt id="L~2"><a class="permalink" href="#L~2"><b>-L</b> <i>SPEC</i></a></dt>
+  <dd>Add: listen on this machine, connect from the host (same spec as the
+      attach flag)</dd>
+  <dt id="R~2"><a class="permalink" href="#R~2"><b>-R</b> <i>SPEC</i></a></dt>
+  <dd>Add: listen on the host, connect from this machine</dd>
+  <dt id="D~2"><a class="permalink" href="#D~2"><b>-D</b> <i>SPEC</i></a></dt>
+  <dd>Add: a SOCKS proxy on this machine</dd>
+  <dt id="rm"><a class="permalink" href="#rm"><b>--rm</b> <i>PORT</i></a></dt>
+  <dd>Remove the forward that listens on PORT. If a -L and a -R share the port,
+      say which with the flag instead: --rm -L PORT</dd>
+</dl>
+</section>
+<section class="Ss">
+<h3 class="Ss" id="fil_ports"><a class="permalink" href="#fil_ports">fil
+  ports</a></h3>
+<p class="Pp">Show what is listening on the host and what is forwarded, with the
+    process behind each</p>
+<p class="Pp">Usage: <b>fil ports [OPTIONS] [HOST] [SESSION]</b></p>
+<dl class="Bl-tag">
+  <dt id="HOST~2"><a class="permalink" href="#HOST~2"><i>HOST</i></a></dt>
+  <dd>The host to ask. Left out inside a session: this machine's daemon, for
+      this session</dd>
+  <dt id="SESSION~2"><a class="permalink" href="#SESSION~2"><i>SESSION</i></a></dt>
+  <dd>Only this session</dd>
+  <dt id="json"><a class="permalink" href="#json"><b>--json</b></a></dt>
+  <dd>Print JSON (schema 1) instead of the table</dd>
+  <dt id="probe"><a class="permalink" href="#probe"><b>--probe</b></a></dt>
+  <dd>Also probe the listeners no fil session started (by default only the -L
+      targets and the sessions' listeners are). Such a listener is often a
+      tunnel, and the probe reaches whatever it leads to; a known forwarder
+      (ssh, kubectl, ...) is never probed</dd>
+</dl>
+</section>
+<section class="Ss">
+<h3 class="Ss" id="fil_server"><a class="permalink" href="#fil_server">fil
+  server</a></h3>
+<p class="Pp">The remote side: run by the pipe command on the host, not by
+    people</p>
+<p class="Pp">Usage: <b>fil server --stdio</b></p>
+<dl class="Bl-tag">
+  <dt id="stdio"><a class="permalink" href="#stdio"><b>--stdio</b></a></dt>
+  <dd>Relay this process's stdin and stdout to the daemon (starting it if
+      needed)</dd>
+</dl>
+</section>
+<section class="Ss">
+<h3 class="Ss" id="fil_install"><a class="permalink" href="#fil_install">fil
+  install</a></h3>
+<p class="Pp">Install this fil on HOST over ssh, into ~/.local/share/fil (or
+    check what is there, or remove what fil installed)</p>
+<p class="Pp">Usage: <b>fil install [OPTIONS] &lt;HOST&gt;</b></p>
+<dl class="Bl-tag">
+  <dt id="HOST~3"><a class="permalink" href="#HOST~3"><i>HOST</i></a></dt>
+  <dd>The host: a name or alias for ssh, or user@name</dd>
+  <dt id="check"><a class="permalink" href="#check"><b>--check</b></a></dt>
+  <dd>Show what is installed on HOST, and the fil on its PATH; change
+    nothing</dd>
+  <dt id="remove"><a class="permalink" href="#remove"><b>--remove</b></a></dt>
+  <dd>Remove the copies fil installed on HOST (not one in use by a running
+      daemon)</dd>
+  <dt id="binary"><a class="permalink" href="#binary"><b>--binary</b>
+    <i>FILE</i></a></dt>
+  <dd>Upload this file instead of the bundled or this fil's own binary (it must
+      be a release build for the host)</dd>
+</dl>
+</section>
+<section class="Ss">
+<h3 class="Ss" id="fil_config"><a class="permalink" href="#fil_config">fil
+  config</a></h3>
+<p class="Pp">Look at the configuration</p>
+<p class="Pp">Usage: <b>fil config [OPTIONS] &lt;COMMAND&gt;</b></p>
+</section>
+<section class="Ss">
+<h3 class="Ss" id="fil_config_show"><a class="permalink" href="#fil_config_show">fil
+  config show</a></h3>
+<p class="Pp">Show the settings that apply to HOST and where each value comes
+    from (the default, [defaults] or [host.NAME]), like ssh -G. Reads only the
+    config file; never contacts the host</p>
+<p class="Pp">Usage: <b>fil config show [OPTIONS] &lt;HOST&gt;</b></p>
+</section>
+</section>
+<section class="Sh">
+<h2 class="Sh" id="NOTES"><a class="permalink" href="#NOTES">NOTES</a></h2>
+<pre>Examples:
+<br/>
+  fil devbox                 attach to (or create) session &quot;main&quot; on devbox
+<br/>
+  fil devbox build           attach to session &quot;build&quot;
+<br/>
+  fil ls devbox              list the sessions on devbox
+<br/>
+  fil kill devbox build      end session &quot;build&quot;
+<br/>
+  fil detach devbox build    detach whoever is attached to &quot;build&quot;</pre>
+<p class="Pp">Inside a session, type ~. after a newline to detach; ~? lists the
+    escapes.</p>
+<p class="Pp">Configuration: ~/.config/fil/config.toml (see fil-config(5), or
+    fil config show HOST). Logs: ~/.local/state/fil/client.log (set
+    FIL_LOG=debug for more).</p>
+<p class="Pp">Exit status: 0 on a normal end (detached, or the session ended
+    with nothing to report); the shell's own status if it exited with one; 128+N
+    if the shell was killed by signal N or fil was stopped by signal N; 1 on an
+    error or if the session was taken over, replaced or detached elsewhere; 2 on
+    a usage error; 255 if a forward failed and forward_failure =
+    &quot;exit&quot;.</p>
+<p class="Pp">Source: every release publishes fil-&lt;version&gt;-source.tar.gz
+    beside the binaries (GPL-3.0 Corresponding Source).</p>
+</section>
+<section class="Sh">
+<h2 class="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
+  ALSO</a></h2>
+<p class="Pp"><b>fil-config</b>(5), <b>fil-policy</b>(5)</p>
+</section>
+</main>
+<div class="foot" role="doc-pagefooter" aria-label="Manual footer
+  line"><span class="foot-left">fil</span> <span class="foot-date"></span>
+  <span class="foot-right">FIL(1)</span></div>
+ <p class="docs-source">Rendered from <a href="https://github.com/anthonytw/fil/blob/v0.2.0/docs/man/fil.1" target="_blank" rel="noopener noreferrer"><code>docs/man/fil.1</code></a> in the fil repository, which the command line generates.</p> </article></div> </main> <footer class="site-footer"> <div class="wrap"> <nav aria-label="Footer"> <a href="/docs/">Guide</a> <a href="/docs/install/">Install</a> <a href="/man/">Manual pages</a> <a href="/security/">Security and release keys</a> <a href="/changelog/">Changelog</a> <a href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer">Source on GitHub</a> </nav> <span>Free software under the <a href="https://github.com/anthonytw/fil/blob/v0.2.0/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0-or-later</a>. No cookies, no tracking, nothing loaded from other sites.</span> </div> </footer> </body></html>

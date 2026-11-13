@@ -1,61 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>fil: a remote shell that keeps your place</title>
-<meta name="description" content="fil is a remote shell for development over SSH and QUIC. Sessions survive reconnects, roaming and sleep.">
-<meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161a1f'/%3E%3Cpath d='M10 40c9 0 9-16 18-16s9 16 18 16 8-10 8-10' fill='none' stroke='%2366d9a8' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
-<style>
-  :root {
-    --bg: #fbfaf7; --fg: #1b1e22; --muted: #5f6670; --line: #e3e0d8; --accent: #1f8a5f; --code: #f1efe9;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #121417; --fg: #e9e7e2; --muted: #9aa1aa; --line: #2a2e34; --accent: #66d9a8; --code: #1b1f24; }
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; background: var(--bg); color: var(--fg); }
-  body { font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
-  main { max-width: 640px; margin: 0 auto; padding: 14vh 24px 64px; }
-  .thread { display: block; width: 100%; max-width: 260px; height: auto; margin: 0 0 28px; }
-  .thread path { stroke: var(--accent); }
-  h1 { font: 600 56px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: -0.02em; margin: 0 0 10px; }
-  .motto { color: var(--muted); font-style: italic; margin: 0 0 28px; }
-  .lede { font-size: 20px; margin: 0 0 24px; }
-  ul { padding-left: 20px; margin: 0 0 32px; }
-  li { margin: 6px 0; }
-  pre { font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code); padding: 12px 14px; border-radius: 8px; overflow-x: auto; margin: 0 0 14px; }
-  .soon { display: inline-block; font: 600 13px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); border-radius: 99px; padding: 7px 12px; margin: 0 0 18px; }
-  p { margin: 0 0 14px; }
-  a { color: var(--accent); }
-  code { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code); padding: 2px 6px; border-radius: 5px; word-break: break-all; }
-  footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
-  footer p { margin: 0 0 8px; }
-</style>
-</head>
-<body>
-<main>
-  <svg class="thread" viewBox="0 0 260 40" aria-hidden="true"><path d="M4 30c24 0 24-22 48-22s24 22 48 22 24-22 48-22 24 22 48 22 24-22 48-22" fill="none" stroke-width="4" stroke-linecap="round"/></svg>
-  <h1>fil</h1>
-  <p class="motto"><span lang="fr">Reprendre le fil</span>: to pick up the thread where you left off.</p>
-  <p class="lede">A remote shell for development over SSH that keeps your place.</p>
-  <ul>
-    <li>Sessions that survive reconnects, roaming and sleep, with your terminal's own scrollback.</li>
-    <li>Reattach after a crash, or take a session over from another machine.</li>
-    <li>Port forwards that stay open across reconnects.</li>
-    <li>Direct QUIC, or a plain SSH pipe when UDP is blocked.</li>
-    <li>Shows what you type before the host echoes it, on slow links (new in 0.2.0).</li>
-  </ul>
-  <span class="soon">0.2.0 is out</span>
-  <pre>brew install anthonytw/tap/fil        # macOS, Linux
-cargo install --locked fil-shell       # from source</pre>
-  <p>The .deb and .rpm packages and the signed archives are on the <a href="https://github.com/anthonytw/fil/releases/tag/v0.2.0">0.2.0 release</a>; the <a href="https://github.com/anthonytw/fil/blob/main/docs/user/install.md">install guide</a> covers them, Arch and Nix, and how to check a download. Then <code>fil HOST</code> works like <code>ssh HOST</code>, and offers to put fil on the host the first time. The code, the design and the changes are on <a href="https://github.com/anthonytw/fil">GitHub</a>.</p>
-  <footer>
-    <p>Releases are signed. Release signing key (ED25519) fingerprint:<br><code>SHA256:Q7KfBHSjAFRimlv46rQuCGxsQF0NHQgLTpBcekwvnp0</code></p>
-    <p>Package signing key (OpenPGP, RSA 4096; signs the .rpm packages and <code>SHA256SUMS.asc</code>) fingerprint:<br><code>9EF0 B189 34B7 0552 0F88 80A5 81C0 98D1 5D1A EC26</code></p>
-    <p>Free software under the GPL-3.0-or-later. No cookies, no scripts, no tracking on this page.</p>
-  </footer>
-</main>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><script src="/theme.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; manifest-src 'none'"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)"><title>fil: a remote shell that keeps your place</title><meta name="description" content="fil is a remote shell for development over SSH and QUIC. Sessions survive reconnects, roaming and sleep."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://fil.anthonywertz.com/"><link rel="preload" href="/fonts/ibm-plex-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/_astro/_slug_.KgzBTcln.css"></head> <body> <a class="skip" href="#main">Skip to content</a> <header class="site-header"> <div class="wrap"> <a class="brand" href="/" aria-label="fil, home"><svg class="thread" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 40c10 0 10-16 20-16s10 16 20 16 12-10 12-10" fill="none" stroke-width="6" stroke-linecap="round"></path></svg>fil</a> <nav class="nav" aria-label="Main"> <a href="/docs/">Guide</a><a href="/man/">Manual</a><a href="/security/">Security</a><a href="/changelog/">Changelog</a> <a class="gh-link" href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer"><svg class="gh" viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub</a> <button class="theme-toggle" type="button" data-theme-toggle data-state="auto" hidden aria-label="Theme: Auto. Activate to switch to Light." title="Theme: Auto (follows your device). Click to change."> <svg class="i-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5v17"></path><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" stroke="none"></path></svg> <svg class="i-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"></path></svg> <svg class="i-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg> <span class="theme-label">Auto</span> </button> </nav> </div> </header> <main id="main"> <section class="wrap hero"> <div> <svg class="thread" viewBox="0 0 260 40" aria-hidden="true"><path d="M4 30c24 0 24-22 48-22s24 22 48 22 24-22 48-22 24 22 48 22 24-22 48-22" fill="none" stroke-width="4" stroke-linecap="round"></path></svg> <h1>fil</h1> <p class="motto"><em lang="fr">Reprendre le fil</em>: to pick up the thread where you left off.</p> <p class="lede">A remote shell for development over SSH that keeps your place.</p> <div class="cta"> <a class="button primary" href="/docs/install/">Install fil 0.2.0</a> <a class="button" href="/docs/quick-start/">Quick start</a> </div> </div> <div class="term" role="img" aria-label="A terminal: fil devbox attaches, ~. detaches, fil devbox comes back, fil ls and fil ports list sessions and forwards"> <div class="term-bar"><i></i><i></i><i></i><span>~ — zsh</span></div> <pre><code><span class="c"># attach to (or create) session "main"</span>
+<span class="p">$</span> fil devbox
+<span class="c"># after Enter, ~. detaches</span>
+<span class="c"># come back, from here or elsewhere</span>
+<span class="p">$</span> fil devbox
+<span class="c"># session "build", port 5173 forwarded</span>
+<span class="p">$</span> fil devbox build -L 5173
+<span class="c"># the sessions; what each one holds</span>
+<span class="p">$</span> fil ls devbox
+<span class="p">$</span> fil ports devbox</code></pre> </div> </section> <section class="wrap band" aria-labelledby="what"> <h2 id="what">What it does</h2> <ul class="features"> <li><strong>Reconnects transparently</strong><p>After a dropped link, a sleeping laptop or a change of network, with your terminal&#39;s own native scrollback.</p></li><li><strong>Keeps sessions</strong><p>Reattach after a local crash, or take a session over from another machine.</p></li><li><strong>Holds port forwards open</strong><p>-L, -R and -D survive reconnects, and fil ports shows what each session holds.</p></li><li><strong>QUIC, or a plain SSH pipe</strong><p>Connects directly over QUIC, or over SSH when UDP is blocked, and moves between the two by itself.</p></li><li><strong>No root, no service</strong><p>One program on the host, run as you. It respects the host admin&#39;s sshd forwarding settings.</p></li><li><strong>Predictive echo<span class="new">new in 0.2.0</span></strong><p>Shows what you type before the host echoes it, as mosh does, when the round trip is long enough for that to help.</p></li> </ul> <p class="muted">It has no panes: your terminal already does that. fil is run over ssh, so your keys, <code>~/.ssh/config</code> and jump hosts apply. <a href="/docs/compared/">How it compares with ssh, Eternal Terminal and mosh</a>.</p> </section> <section class="wrap band install" aria-labelledby="install"> <div> <h2 id="install">Install</h2> <p>On macOS and Linux, x86_64 and aarch64. fil goes on the host too: <code>fil install HOST</code> puts it there over your ssh login, or the first <code>fil HOST</code> offers to.</p> <p>The <code>.deb</code> and <code>.rpm</code> packages and the signed archives are on the <a href="https://github.com/anthonytw/fil/releases/tag/v0.2.0" target="_blank" rel="noopener noreferrer">0.2.0 release</a>. The <a href="/docs/install/">install guide</a> covers Fedora, Arch and Nix too, and <a href="/security/">how to check a download</a>.</p> </div> <div class="term"> <div class="term-bar"><i></i><i></i><i></i><span>install</span></div> <pre><code><span class="c"># macOS, Linux</span>
+<span class="p">$</span> brew install anthonytw/tap/fil
+<span class="c"># Debian, Ubuntu (from the release)</span>
+<span class="p">$</span> sudo apt install ./fil_0.2.0_amd64.deb
+<span class="c"># from source; the command is fil</span>
+<span class="p">$</span> cargo install --locked fil-shell</code></pre> </div> </section> <section class="wrap band" aria-labelledby="predict"> <h2 id="predict">New in 0.2.0: predictive echo</h2> <div class="prose"> <p>Over a slow link every key takes a round trip before it appears. fil can draw the character at once, as a guess, and replace it with what the host really sends. It is on by default above about 30 ms of round trip, underlined while the link is slow, held back at password prompts (the guide lists four rare cases where it is not) and in full-screen programs, and <code>predict = "off"</code> turns it off. <a href="/docs/#predictive-echo">How it works</a>.</p> <div class="callout warn"> <p><strong>A known limit in 0.2.0, to be fixed in 0.2.1.</strong> Once something interrupts the run of guesses (Enter, Tab, Ctrl-W, a Backspace while keys are in flight, the end of the line, or fish's and zsh's autosuggestions), prediction stays off until your typing slows below about one key per round trip. That is slower than many people type, so on a long round trip you will often see no guesses. It never shows anything wrong: you see your keys when the host echoes them, as over ssh.</p> </div> </div> </section> </main> <footer class="site-footer"> <div class="wrap"> <nav aria-label="Footer"> <a href="/docs/">Guide</a> <a href="/docs/install/">Install</a> <a href="/man/">Manual pages</a> <a href="/security/">Security and release keys</a> <a href="/changelog/">Changelog</a> <a href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer">Source on GitHub</a> </nav> <span>Free software under the <a href="https://github.com/anthonytw/fil/blob/v0.2.0/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0-or-later</a>. No cookies, no tracking, nothing loaded from other sites.</span> </div> </footer> </body></html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><script src="/theme.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; manifest-src 'none'"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)"><title>For host admins: /etc/fil/policy.toml and the sshd mirror · fil</title><meta name="description" content="This page is for the person who runs a host that users connect to with fil. You may never have heard of fil before. In short: fil is a program your users copy into their home directories. It needs no root, no service…"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://fil.anthonywertz.com/docs/policy/"><link rel="preload" href="/fonts/ibm-plex-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/_astro/_slug_.KgzBTcln.css"></head> <body> <a class="skip" href="#main">Skip to content</a> <header class="site-header"> <div class="wrap"> <a class="brand" href="/" aria-label="fil, home"><svg class="thread" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 40c10 0 10-16 20-16s10 16 20 16 12-10 12-10" fill="none" stroke-width="6" stroke-linecap="round"></path></svg>fil</a> <nav class="nav" aria-label="Main"> <a href="/docs/" aria-current="page">Guide</a><a href="/man/">Manual</a><a href="/security/">Security</a><a href="/changelog/">Changelog</a> <a class="gh-link" href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer"><svg class="gh" viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub</a> <button class="theme-toggle" type="button" data-theme-toggle data-state="auto" hidden aria-label="Theme: Auto. Activate to switch to Light." title="Theme: Auto (follows your device). Click to change."> <svg class="i-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5v17"></path><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" stroke="none"></path></svg> <svg class="i-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"></path></svg> <svg class="i-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg> <span class="theme-label">Auto</span> </button> </nav> </div> </header> <main id="main"> <div class="wrap docs"> <details class="docs-toc-mobile"> <summary>Guide contents</summary> <nav aria-label="Guide"> <a href="/docs/">Overview</a> <div class="docs-group"> <p class="docs-group-title">Start here</p> <ul><li><a href="/docs/install/">Install</a></li><li><a href="/docs/quick-start/">Quick start</a></li><li><a href="/docs/sessions/">Sessions, detach and takeover</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Using fil</p> <ul><li><a href="/docs/transports/">Reconnects and transports</a></li><li><a href="/docs/forwards/">Forwards and fil ports</a></li><li><a href="/docs/agent/">The agent</a></li><li><a href="/docs/compared/">fil compared with ssh, ET and mosh</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Configuration</p> <ul><li><a href="/docs/config/">config.toml</a></li><li><a href="/docs/daemon/">daemon.toml</a></li><li><a href="/docs/policy/" aria-current="page">/etc/fil/policy.toml</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Trust and trouble</p> <ul><li><a href="/docs/security-privacy/">Security and privacy</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul> </div> </nav> </details> <aside class="docs-side"> <nav aria-label="Guide"> <a href="/docs/">Overview</a> <div class="docs-group"> <p class="docs-group-title">Start here</p> <ul><li><a href="/docs/install/">Install</a></li><li><a href="/docs/quick-start/">Quick start</a></li><li><a href="/docs/sessions/">Sessions, detach and takeover</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Using fil</p> <ul><li><a href="/docs/transports/">Reconnects and transports</a></li><li><a href="/docs/forwards/">Forwards and fil ports</a></li><li><a href="/docs/agent/">The agent</a></li><li><a href="/docs/compared/">fil compared with ssh, ET and mosh</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Configuration</p> <ul><li><a href="/docs/config/">config.toml</a></li><li><a href="/docs/daemon/">daemon.toml</a></li><li><a href="/docs/policy/" aria-current="page">/etc/fil/policy.toml</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Trust and trouble</p> <ul><li><a href="/docs/security-privacy/">Security and privacy</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul> </div> <div class="docs-group"> <p class="docs-group-title">Reference</p> <ul><li><a href="/man/">Manual pages</a></li><li><a href="/changelog/">Changelog</a></li></ul> </div> </nav> </aside> <article class="docs-main prose"> <header class="docs-head"> <p class="eyebrow">Configuration</p> <h1>For host admins: <code>/etc/fil/policy.toml</code> and the sshd mirror</h1> </header>  <p>This page is for the person who runs a host that users connect to with fil. You may never have heard of fil before. In short: fil is a program your users copy into their home directories. It needs no root, no service and no open port beyond the ones it asks for. It respects what <strong>you</strong> decided about forwarding, in two layers, and refuses when it can’t tell.</p>
+<p><strong>This is a courtesy, not a security boundary.</strong> As <code>sshd_config(5)</code> says of its own forwarding switches, a user who has a shell can run any program they like, including their own relay. fil’s policy keeps well-behaved tools in line with what you meant; it does not stop a determined user.</p>
+<h2 id="what-fil-does-on-your-host">What fil does on your host</h2>
+<ul>
+<li>Each user who runs it gets one daemon, as themselves, started by their first login. There is no system-wide service and nothing setuid.</li>
+<li>The daemon holds the user’s sessions (a shell each), in memory. Its socket is in <code>/tmp/fil-$UID/</code> (mode 0700), and every connection’s peer user is checked.</li>
+<li>It uses ssh for authentication. An attach is an ordinary ssh login that runs <code>fil server --stdio</code>. fil adds no accounts and no keys of its own.</li>
+<li><strong>Direct mode</strong> adds one UDP port per user, in 60000-61000 by default (the range mosh uses). The port accepts only a client holding a key registered over the user’s ssh login.</li>
+<li>A user may install fil into <code>~/.local/share/fil</code> through their own ssh login. Nothing is installed anywhere else.</li>
+</ul>
+<h2 id="layer-1-the-sshd-mirror">Layer 1: the sshd mirror</h2>
+<p>fil reads <code>/etc/ssh/sshd_config</code> and the files it includes, and applies the forwarding settings <strong>as sshd would for the daemon’s user</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>sshd setting</th>
+<th>What it governs in fil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DisableForwarding</code></td>
+<td>all forwards and the agent</td>
+</tr>
+<tr>
+<td><code>AllowTcpForwarding</code> (<code>yes</code>/<code>all</code>, <code>no</code>, <code>local</code>, <code>remote</code>)</td>
+<td><code>-L</code> and <code>-D</code>; <code>-R</code></td>
+</tr>
+<tr>
+<td><code>AllowAgentForwarding</code></td>
+<td>the agent relay</td>
+</tr>
+<tr>
+<td><code>PermitOpen</code></td>
+<td>the targets of <code>-L</code>, and of each <code>-D</code> SOCKS request</td>
+</tr>
+<tr>
+<td><code>PermitListen</code></td>
+<td>the binds of <code>-R</code></td>
+</tr>
+<tr>
+<td><code>GatewayPorts</code></td>
+<td><code>-R</code> binds beyond loopback: only with <code>yes</code> or <code>clientspecified</code></td>
+</tr>
+</tbody>
+</table>
+<p>Every other keyword is skipped. How the mirror reads the file:</p>
+<ul>
+<li><strong>Parsing is sshd’s:</strong> keywords are case-insensitive, <code>keyword value</code> or <code>keyword=value</code>, <code>#</code> starts a comment, the first value of a setting wins, and the defaults are OpenSSH’s (forwarding and the agent allowed, <code>PermitOpen</code> and <code>PermitListen</code> <code>any</code>, <code>GatewayPorts no</code>).</li>
+<li><strong><code>Match</code>:</strong> <code>User</code> and <code>Group</code> (patterns with <code>*</code>, <code>?</code> and a leading <code>!</code> in lists) are evaluated against the daemon’s user. Any other criterion (<code>Address</code>, <code>Host</code>, <code>LocalAddress</code>, <code>LocalPort</code>, <code>RDomain</code>, <code>all</code>, and so on) <strong>might apply</strong>, and then the stricter of the block’s value and the outer one wins.</li>
+<li><strong><code>Include</code></strong> takes globs relative to <code>/etc/ssh</code>, in sorted order, at most 16 deep. A file included from a <code>Match</code> block is inside it.</li>
+<li><strong>Strict when unsure.</strong> A value fil doesn’t know is read as the strict one. A line that fil can’t evaluate the way sshd would (for example an <code>Include</code> glob that differs between systems, or a file with a NUL byte) makes the settings <strong>unknown</strong>: every forward and the agent are refused, naming the file and line, unless <code>policy.toml</code> sets the key itself.</li>
+<li><strong>Unreadable files.</strong> A main <code>sshd_config</code> that fil can’t read (RHEL and Fedora keep it mode 0600) is not an error: fil uses OpenSSH’s defaults, so a wide <code>-R</code> is still refused. An included file or directory it can’t read is skipped, the rest is still enforced, and <code>fil ports</code> says that the mirror is incomplete, naming the file or directory but nothing in it.</li>
+</ul>
+<p>The mirror reads the file as the daemon’s user. If your users cannot read <code>sshd_config</code>, the defaults stand in; put the settings you want in <code>policy.toml</code>.</p>
+<h2 id="layer-2-etcfilpolicytoml">Layer 2: <code>/etc/fil/policy.toml</code></h2>
+<p>A file that <strong>you</strong> write. Its keys override what is mirrored, to tighten or explicitly to loosen. A key left out keeps the mirror.</p>
+<pre><code class="language-toml"># Each key overrides what fil mirrors from sshd_config; a key left out keeps the mirror.
+local = true              # -L and -D (instead of AllowTcpForwarding and DisableForwarding)
+remote = true             # -R
+agent = true              # the agent relay (instead of AllowAgentForwarding and DisableForwarding)
+direct = true             # fil's direct (QUIC) transport; false: no UDP port, attaches use the pipe
+permit_open = ["any"]     # -L and -D targets, as PermitOpen: "any", "none", or "host:port" ("*" for either)
+permit_listen = ["any"]   # -R binds, as PermitListen: "any", "none", "port" or "host:port"
+gateway_ports = false     # -R beyond loopback (as GatewayPorts clientspecified when true)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Values</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>local</code></td>
+<td><code>true</code>, <code>false</code></td>
+<td>allow or refuse <code>-L</code> and <code>-D</code>, instead of <code>AllowTcpForwarding</code> and <code>DisableForwarding</code></td>
+</tr>
+<tr>
+<td><code>remote</code></td>
+<td><code>true</code>, <code>false</code></td>
+<td>allow or refuse <code>-R</code></td>
+</tr>
+<tr>
+<td><code>agent</code></td>
+<td><code>true</code>, <code>false</code></td>
+<td>allow or refuse the agent relay, instead of <code>AllowAgentForwarding</code> and <code>DisableForwarding</code></td>
+</tr>
+<tr>
+<td><code>direct</code></td>
+<td><code>true</code>, <code>false</code></td>
+<td><code>false</code> refuses fil’s direct transport, which sshd has no switch for: the daemon <strong>opens no UDP port</strong>, offers no direct mode, and drops a QUIC resume, so clients use the pipe</td>
+</tr>
+<tr>
+<td><code>permit_open</code></td>
+<td>a list of <code>"any"</code>, <code>"none"</code>, or <code>"host:port"</code> / <code>"[v6]:port"</code> entries; <code>*</code> stands for either part</td>
+<td>as <code>PermitOpen</code>: the targets of <code>-L</code> and of each <code>-D</code> request</td>
+</tr>
+<tr>
+<td><code>permit_listen</code></td>
+<td>a list of <code>"any"</code>, <code>"none"</code>, <code>"port"</code>, or <code>"host:port"</code> entries; <code>*</code> stands for either part</td>
+<td>as <code>PermitListen</code>: the binds of <code>-R</code></td>
+</tr>
+<tr>
+<td><code>gateway_ports</code></td>
+<td><code>true</code>, <code>false</code></td>
+<td><code>-R</code> binds beyond loopback; <code>true</code> is <code>GatewayPorts clientspecified</code>, <code>false</code> is <code>no</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>any</code> and <code>none</code> must be the whole list. An empty list, or an entry fil can’t read (a port of 0, say), makes the file unusable, and then everything is refused (below).</p>
+<p>Because the file stands in for the mirror’s settings key by key, a policy file that sets all of <code>local</code>, <code>remote</code>, <code>agent</code>, <code>permit_open</code>, <code>permit_listen</code> and <code>gateway_ports</code> leaves nothing for the mirror to decide, which also rescues a host whose <code>sshd_config</code> fil can’t evaluate.</p>
+<h3 id="when-the-file-is-trusted-and-when-everything-is-refused">When the file is trusted, and when everything is refused</h3>
+<p>fil uses the file only if it is:</p>
+<ul>
+<li>a regular file, not a symbolic link;</li>
+<li>owned by root;</li>
+<li>not group- or world-writable;</li>
+<li>in directories that are owned by root and not group- or world-writable, all the way up. A symbolic link on the way must be root’s, and its target directories must pass too.</li>
+</ul>
+<p><strong>Absent is fine:</strong> the sshd mirror alone decides.</p>
+<p><strong>Present but failing a check, or not parsing, refuses every forward and the agent,</strong> naming the file. An unknown key, a duplicate key, a value of the wrong type, an empty list and invalid UTF-8 all count as not parsing, and so does a file the daemon’s user can’t read. This is deliberate: someone who wrote a policy file meant something by it, and a file fil can’t trust or read must not open what they meant to close.</p>
+<pre><code class="language-sh">sudo install -m 0644 -o root -g root policy.toml /etc/fil/policy.toml
+</code></pre>
+<h2 id="where-it-is-enforced">Where it is enforced</h2>
+<p>On the host, in the daemon, every time a session would let a forward or the agent exist:</p>
+<ul>
+<li>when a forward is <strong>added</strong>: from the attached client’s command line or config, from <code>fil forward</code>, or by takeover;</li>
+<li>when the forward table is <strong>re-established</strong> for a client, at every fresh attach and resume: a <code>-R</code> listener the policy now refuses is closed, one it allows again is bound again;</li>
+<li>on <strong>every connection</strong> through a forward, including each SOCKS target of a <code>-D</code>, and each accepted <code>-R</code> connection;</li>
+<li>when the <strong>agent socket</strong> would be created, and on every agent connection.</li>
+</ul>
+<p>A user’s own <code>daemon.toml</code> can only narrow the policy, never loosen it.</p>
+<h2 id="changes-take-effect-without-a-restart">Changes take effect without a restart</h2>
+<p>At most once a second, a check looks at the metadata of every file the policy was read from (and each directory a glob listed, and the one the policy file sits in), and re-reads everything when any of it changed, and every five minutes in any case. The reading is done in the background, never in the check, so a slow directory service holds up no session. A read that isn’t known to be current for too long decides nothing, and checks refuse until the re-read is in.</p>
+<p>There is no signal for it: an admin who edits <code>sshd_config</code> reloads sshd, not fil daemons they may not know are there, so fil would never get the signal. A tightened policy reaches the running sessions of your users within a few minutes: forwards it now refuses are closed.</p>
+<h2 id="what-users-see">What users see</h2>
+<p>A refusal names the deciding setting and its source, for example:</p>
+<pre><code class="language-text">REFUSED BY SERVER POLICY
+  -R *:8080:localhost:80: GatewayPorts no (OpenSSH's default)
+  agent forwarding: AllowAgentForwarding no (/etc/ssh/sshd_config:12)
+</code></pre>
+<p>Only the deciding setting leaves the host, not the rest of your configuration. <code>fil ports</code> also says, in a <code>SERVER POLICY</code> block, when <code>sshd_config</code> or an included file can’t be read, when a line can’t be evaluated, when <code>policy.toml</code> refuses everything, and when direct mode is refused.</p>
+<h2 id="privacy">Privacy</h2>
+<p>Nothing of the config is logged above debug level, and the debug lines say what happened, not what your files hold. See <a href="/docs/security-privacy/">security and privacy</a>.</p>  <nav class="docs-pager" aria-label="Previous and next page"> <a class="prev" href="/docs/daemon/"><span class="muted">Previous</span>daemon.toml</a> <a class="next" href="/docs/security-privacy/"><span class="muted">Next</span>Security and privacy</a> </nav> <p class="docs-source">This page is <a href="https://github.com/anthonytw/fil/blob/v0.2.0/docs/user/policy.md" target="_blank" rel="noopener noreferrer"><code>docs/user/policy.md</code></a> in the fil repository, as of fil 0.2.0. Corrections go there.</p> </article> </div> </main> <footer class="site-footer"> <div class="wrap"> <nav aria-label="Footer"> <a href="/docs/">Guide</a> <a href="/docs/install/">Install</a> <a href="/man/">Manual pages</a> <a href="/security/">Security and release keys</a> <a href="/changelog/">Changelog</a> <a href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer">Source on GitHub</a> </nav> <span>Free software under the <a href="https://github.com/anthonytw/fil/blob/v0.2.0/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0-or-later</a>. No cookies, no tracking, nothing loaded from other sites.</span> </div> </footer> </body></html>

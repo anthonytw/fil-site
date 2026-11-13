@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><script src="/theme.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; manifest-src 'none'"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)"><title>Sessions, detach and takeover · fil</title><meta name="description" content="A session is a shell on the host, with its terminal, its scrollback and its port forwards. It belongs to a daemon fil starts for you on the host, not to your client, so it outlives the client."><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://fil.anthonywertz.com/docs/sessions/"><link rel="preload" href="/fonts/ibm-plex-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/_astro/_slug_.KgzBTcln.css"></head> <body> <a class="skip" href="#main">Skip to content</a> <header class="site-header"> <div class="wrap"> <a class="brand" href="/" aria-label="fil, home"><svg class="thread" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 40c10 0 10-16 20-16s10 16 20 16 12-10 12-10" fill="none" stroke-width="6" stroke-linecap="round"></path></svg>fil</a> <nav class="nav" aria-label="Main"> <a href="/docs/" aria-current="page">Guide</a><a href="/man/">Manual</a><a href="/security/">Security</a><a href="/changelog/">Changelog</a> <a class="gh-link" href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer"><svg class="gh" viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub</a> <button class="theme-toggle" type="button" data-theme-toggle data-state="auto" hidden aria-label="Theme: Auto. Activate to switch to Light." title="Theme: Auto (follows your device). Click to change."> <svg class="i-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5v17"></path><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" stroke="none"></path></svg> <svg class="i-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"></path></svg> <svg class="i-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg> <span class="theme-label">Auto</span> </button> </nav> </div> </header> <main id="main"> <div class="wrap docs"> <details class="docs-toc-mobile"> <summary>Guide contents</summary> <nav aria-label="Guide"> <a href="/docs/">Overview</a> <div class="docs-group"> <p class="docs-group-title">Start here</p> <ul><li><a href="/docs/install/">Install</a></li><li><a href="/docs/quick-start/">Quick start</a></li><li><a href="/docs/sessions/" aria-current="page">Sessions, detach and takeover</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Using fil</p> <ul><li><a href="/docs/transports/">Reconnects and transports</a></li><li><a href="/docs/forwards/">Forwards and fil ports</a></li><li><a href="/docs/agent/">The agent</a></li><li><a href="/docs/compared/">fil compared with ssh, ET and mosh</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Configuration</p> <ul><li><a href="/docs/config/">config.toml</a></li><li><a href="/docs/daemon/">daemon.toml</a></li><li><a href="/docs/policy/">/etc/fil/policy.toml</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Trust and trouble</p> <ul><li><a href="/docs/security-privacy/">Security and privacy</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul> </div> </nav> </details> <aside class="docs-side"> <nav aria-label="Guide"> <a href="/docs/">Overview</a> <div class="docs-group"> <p class="docs-group-title">Start here</p> <ul><li><a href="/docs/install/">Install</a></li><li><a href="/docs/quick-start/">Quick start</a></li><li><a href="/docs/sessions/" aria-current="page">Sessions, detach and takeover</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Using fil</p> <ul><li><a href="/docs/transports/">Reconnects and transports</a></li><li><a href="/docs/forwards/">Forwards and fil ports</a></li><li><a href="/docs/agent/">The agent</a></li><li><a href="/docs/compared/">fil compared with ssh, ET and mosh</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Configuration</p> <ul><li><a href="/docs/config/">config.toml</a></li><li><a href="/docs/daemon/">daemon.toml</a></li><li><a href="/docs/policy/">/etc/fil/policy.toml</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Trust and trouble</p> <ul><li><a href="/docs/security-privacy/">Security and privacy</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul> </div> <div class="docs-group"> <p class="docs-group-title">Reference</p> <ul><li><a href="/man/">Manual pages</a></li><li><a href="/changelog/">Changelog</a></li></ul> </div> </nav> </aside> <article class="docs-main prose"> <header class="docs-head"> <p class="eyebrow">Start here</p> <h1>Sessions, detach and takeover</h1> </header>  <p>A session is a shell on the host, with its terminal, its scrollback and its port forwards. It belongs to a daemon fil starts for you on the host, not to your client, so it outlives the client.</p>
+<figure class="diagram">
+<img class="diagram-light" src="/diagrams/sessions-1-light.svg" alt="Diagram (Sessions, detach and takeover): laptop: fil devbox; devbox: your fil daemon; session main; session build">
+<img class="diagram-dark" src="/diagrams/sessions-1-dark.svg" alt="Diagram (Sessions, detach and takeover): laptop: fil devbox; devbox: your fil daemon; session main; session build">
+</figure>
+<h2 id="names-and-lifetime">Names and lifetime</h2>
+<ul>
+<li>A session name is <code>[A-Za-z0-9._-]</code>, 1 to 64 characters. <code>fil HOST</code> with no name is the session <code>main</code>.</li>
+<li>Attaching to a name that does not exist creates it.</li>
+<li>A session lives until its shell exits or you end it with <code>fil kill</code>. Detached sessions stay as long as the daemon does. The daemon exits by itself when it has no sessions and no connections for five minutes (<code>idle_exit_secs</code> in <a href="/docs/daemon/"><code>daemon.toml</code></a>); it does not exit while a session exists.</li>
+<li>The daemon keeps each session’s recent output (1,000 lines by default; <code>history_lines</code> in <code>daemon.toml</code>) in memory, so you can resume or reattach. It is never written to disk.</li>
+<li>If the host reboots, or something kills the daemon, the sessions are gone. A host that kills your processes at logout also does: see <a href="/docs/troubleshooting/">troubleshooting</a>.</li>
+</ul>
+<h2 id="listing-and-ending">Listing and ending</h2>
+<pre><code class="language-sh">fil ls devbox                 # NAME, TERM, FORWARDS, ATTACHED, LAST OUTPUT, CREATED
+fil kill devbox build         # end "build"
+</code></pre>
+<p><code>fil kill</code> hangs up the session’s shell and everything it started, as closing a terminal would, then kills whatever is left after a short grace. The client attached to it sees the session end.</p>
+<h2 id="detach">Detach</h2>
+<p>Three ways, which keep the session running:</p>
+<ul>
+<li>Type <code>~.</code> after Enter, in the session.</li>
+<li><code>fil detach devbox build</code> from anywhere, which detaches whoever is attached to <code>build</code>.</li>
+<li>Inside a session, <code>fil detach</code> with no arguments detaches this session.</li>
+</ul>
+<p>When you detach, fil hands your terminal back at once and resets the modes the session had set (the alternate screen, mouse reporting, bracketed paste, a hidden cursor) without clearing your scrollback.</p>
+<h2 id="the-escapes">The escapes</h2>
+<p>Typed right after Enter, as in ssh:</p>
+<table>
+<thead>
+<tr>
+<th>Keys</th>
+<th>What</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>~.</code></td>
+<td>detach</td>
+</tr>
+<tr>
+<td><code>~#</code></td>
+<td>show the forwards and the agent</td>
+</tr>
+<tr>
+<td><code>~?</code></td>
+<td>list these</td>
+</tr>
+<tr>
+<td><code>~~</code></td>
+<td>a literal <code>~</code></td>
+</tr>
+</tbody>
+</table>
+<p>Pasted text is never read as an escape.</p>
+<h2 id="one-client-at-a-time-takeover">One client at a time: takeover</h2>
+<p>At most one client is attached to a session. If you attach to a session that is attached elsewhere, you <strong>take it over</strong>: the other client is told that the session was taken over by your machine’s label at a time, and drops. You get the screen sized to your terminal.</p>
+<p>A laptop that wakes up later does not steal the session back. Its client is refused with the takeover message and asked, on its own terminal, whether to take the session back (<code>y</code> or <code>n</code>). The label shown is <code>host_label</code> from your <a href="/docs/config/">config</a>, by default your machine’s short host name. It is shown only to your own other clients.</p>
+<h2 id="resuming-and-catching-up">Resuming and catching up</h2>
+<p>When a link drops and comes back, the client says where it stopped and the daemon sends the rest: no gap, and the scrollback is the terminal’s own. If the daemon’s log has wrapped past that point, or the client is new, the daemon sends a snapshot of the recent lines, then the live stream. A client that falls far behind on a slow link may be sent a jump to the current screen instead of every line.</p>
+<h2 id="exit-status">Exit status</h2>
+<p><code>fil HOST</code> exits like ssh:</p>
+<ul>
+<li><code>0</code> when you detach or the session ends with nothing to report;</li>
+<li>the shell’s own status if it exited with one, or <code>128+N</code> if it was killed by signal N (or fil was stopped by signal N);</li>
+<li><code>1</code> on an error, or if the session was taken over, replaced or detached elsewhere;</li>
+<li><code>2</code> on a usage error;</li>
+<li><code>255</code> if a forward failed and <code>forward_failure = "exit"</code>.</li>
+</ul>
+<p>A host or session named like a subcommand (<code>ls</code>, <code>kill</code>, <code>detach</code>, <code>forward</code>, <code>ports</code>, <code>server</code>, <code>install</code>, <code>config</code>) is attached with <code>--</code>: <code>fil -- ls</code>, <code>fil devbox -- ls</code>.</p>  <nav class="docs-pager" aria-label="Previous and next page"> <a class="prev" href="/docs/quick-start/"><span class="muted">Previous</span>Quick start</a> <a class="next" href="/docs/transports/"><span class="muted">Next</span>Reconnects and transports</a> </nav> <p class="docs-source">This page is <a href="https://github.com/anthonytw/fil/blob/v0.2.0/docs/user/sessions.md" target="_blank" rel="noopener noreferrer"><code>docs/user/sessions.md</code></a> in the fil repository, as of fil 0.2.0. Corrections go there.</p> </article> </div> </main> <footer class="site-footer"> <div class="wrap"> <nav aria-label="Footer"> <a href="/docs/">Guide</a> <a href="/docs/install/">Install</a> <a href="/man/">Manual pages</a> <a href="/security/">Security and release keys</a> <a href="/changelog/">Changelog</a> <a href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer">Source on GitHub</a> </nav> <span>Free software under the <a href="https://github.com/anthonytw/fil/blob/v0.2.0/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0-or-later</a>. No cookies, no tracking, nothing loaded from other sites.</span> </div> </footer> </body></html>

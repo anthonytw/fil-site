@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><script src="/theme.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; manifest-src 'none'"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)"><title>Forwards and fil ports · fil</title><meta name="description" content="A port forward belongs to a session, not to a connection: it survives reconnects, a takeover from another machine, and a detach. When the link is down, connections wait and carry on when it returns; the connections…"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://fil.anthonywertz.com/docs/forwards/"><link rel="preload" href="/fonts/ibm-plex-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/_astro/_slug_.KgzBTcln.css"></head> <body> <a class="skip" href="#main">Skip to content</a> <header class="site-header"> <div class="wrap"> <a class="brand" href="/" aria-label="fil, home"><svg class="thread" viewBox="0 0 64 64" aria-hidden="true"><path d="M6 40c10 0 10-16 20-16s10 16 20 16 12-10 12-10" fill="none" stroke-width="6" stroke-linecap="round"></path></svg>fil</a> <nav class="nav" aria-label="Main"> <a href="/docs/" aria-current="page">Guide</a><a href="/man/">Manual</a><a href="/security/">Security</a><a href="/changelog/">Changelog</a> <a class="gh-link" href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer"><svg class="gh" viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub</a> <button class="theme-toggle" type="button" data-theme-toggle data-state="auto" hidden aria-label="Theme: Auto. Activate to switch to Light." title="Theme: Auto (follows your device). Click to change."> <svg class="i-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5v17"></path><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" stroke="none"></path></svg> <svg class="i-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"></path></svg> <svg class="i-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"></path></svg> <span class="theme-label">Auto</span> </button> </nav> </div> </header> <main id="main"> <div class="wrap docs"> <details class="docs-toc-mobile"> <summary>Guide contents</summary> <nav aria-label="Guide"> <a href="/docs/">Overview</a> <div class="docs-group"> <p class="docs-group-title">Start here</p> <ul><li><a href="/docs/install/">Install</a></li><li><a href="/docs/quick-start/">Quick start</a></li><li><a href="/docs/sessions/">Sessions, detach and takeover</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Using fil</p> <ul><li><a href="/docs/transports/">Reconnects and transports</a></li><li><a href="/docs/forwards/" aria-current="page">Forwards and fil ports</a></li><li><a href="/docs/agent/">The agent</a></li><li><a href="/docs/compared/">fil compared with ssh, ET and mosh</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Configuration</p> <ul><li><a href="/docs/config/">config.toml</a></li><li><a href="/docs/daemon/">daemon.toml</a></li><li><a href="/docs/policy/">/etc/fil/policy.toml</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Trust and trouble</p> <ul><li><a href="/docs/security-privacy/">Security and privacy</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul> </div> </nav> </details> <aside class="docs-side"> <nav aria-label="Guide"> <a href="/docs/">Overview</a> <div class="docs-group"> <p class="docs-group-title">Start here</p> <ul><li><a href="/docs/install/">Install</a></li><li><a href="/docs/quick-start/">Quick start</a></li><li><a href="/docs/sessions/">Sessions, detach and takeover</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Using fil</p> <ul><li><a href="/docs/transports/">Reconnects and transports</a></li><li><a href="/docs/forwards/" aria-current="page">Forwards and fil ports</a></li><li><a href="/docs/agent/">The agent</a></li><li><a href="/docs/compared/">fil compared with ssh, ET and mosh</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Configuration</p> <ul><li><a href="/docs/config/">config.toml</a></li><li><a href="/docs/daemon/">daemon.toml</a></li><li><a href="/docs/policy/">/etc/fil/policy.toml</a></li></ul> </div><div class="docs-group"> <p class="docs-group-title">Trust and trouble</p> <ul><li><a href="/docs/security-privacy/">Security and privacy</a></li><li><a href="/docs/troubleshooting/">Troubleshooting</a></li></ul> </div> <div class="docs-group"> <p class="docs-group-title">Reference</p> <ul><li><a href="/man/">Manual pages</a></li><li><a href="/changelog/">Changelog</a></li></ul> </div> </nav> </aside> <article class="docs-main prose"> <header class="docs-head"> <p class="eyebrow">Using fil</p> <h1>Forwards and <code>fil ports</code></h1> </header>  <p>A port forward belongs to a session, not to a connection: it survives reconnects, a takeover from another machine, and a detach. When the link is down, connections wait and carry on when it returns; the connections already open stay for a while (<code>linger</code>, ten minutes by default) after the client goes.</p>
+<h2 id="kinds">Kinds</h2>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Listens</th>
+<th>Connects from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-L [BIND:]PORT:HOST:HOSTPORT</code></td>
+<td>here, on your machine</td>
+<td>the host</td>
+</tr>
+<tr>
+<td><code>-R [BIND:]PORT:HOST:HOSTPORT</code></td>
+<td>on the host</td>
+<td>here, your machine</td>
+</tr>
+<tr>
+<td><code>-D [BIND:]PORT</code></td>
+<td>here, a SOCKS proxy</td>
+<td>the host</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-sh">fil devbox -L 5173            # localhost:5173 here → port 5173 on devbox
+fil devbox -L 8080:db.example.net:5432
+fil devbox -R 9000            # port 9000 on devbox → localhost:9000 here
+fil devbox -D 1080            # a SOCKS proxy on localhost:1080 that connects from devbox
+fil devbox build -L 5173      # the same, for the session "build"
+</code></pre>
+<p>The specs are written as in ssh, with these differences:</p>
+<ul>
+<li><code>-L PORT</code> and <code>-R PORT</code> mean the same port on the other side’s localhost. (ssh’s <code>-R PORT</code> alone is a SOCKS proxy on the remote; fil has none.)</li>
+<li><strong>A bare port binds loopback</strong>, on both ends. A <code>BIND</code> of <code>*</code> or an empty one is every interface, IPv4 and IPv6, and must be written. <code>0.0.0.0</code> is every IPv4 interface only, and <code>[::]</code> every IPv6 one; <code>localhost</code> is loopback on both.</li>
+<li><code>-R 0:HOST:HOSTPORT</code> asks the host for a free port.</li>
+<li>Hosts may be an IPv4 address, a bracketed IP address (<code>[2001:db8::1]</code>), or a plain host name. There are no Unix-socket forms, no service names, and <code>127.1</code> is refused.</li>
+<li>Repeat a flag for more forwards. A run carries at most 64. Repeating a spec keeps it once, and a later one with the same bind and port but another target replaces it. Two different entries that would listen on the same port are an error.</li>
+<li>A <code>-L</code> or <code>-D</code> port that can’t be bound is reported before your terminal goes raw (a <code>-R</code> that the host can’t bind is reported later, when the host tries). The <code>forward_failure</code> setting in your <a href="/docs/config/">config</a> decides whether that is only a warning (the default) or ends the run with status 255, like ssh’s <code>ExitOnForwardFailure</code>.</li>
+</ul>
+<p>The list of forwards a host should have can also live in your config; see <a href="/docs/config/"><code>config.toml</code></a>.</p>
+<h2 id="adding-and-removing-forwards-later">Adding and removing forwards later</h2>
+<pre><code class="language-sh">fil forward devbox -L 5173        # add to the session "main" on devbox
+fil forward devbox build -R 9000  # to the session "build"
+fil forward devbox --rm 5173      # remove the forward that listens on 5173
+fil forward devbox --rm -L 5173   # when a -L and a -R share the port, say which
+</code></pre>
+<p>Inside a session, leave the host out: <code>fil forward -L 5173</code> works on this session, which is <code>$FIL_SESSION</code>. The attached client <strong>asks you once</strong> before it listens or connects for a forward added this way, since it may have been asked for by a process on the host. <code>remote_requests</code> in your config can answer <code>deny</code> instead. Some requests are refused <strong>without asking</strong>: a <code>-L</code> or <code>-D</code> bound beyond loopback, a <code>-R</code> bound beyond loopback, and a <code>-R</code> to a target beyond loopback. After three requests in a row are refused (answered no, or not answered), every further one in this run is refused without asking. The first few such refusals are still shown on your terminal.</p>
+<h2 id="fil-ports"><code>fil ports</code></h2>
+<pre><code class="language-sh">fil ports devbox            # every session on devbox
+fil ports devbox build      # one session
+fil ports                   # inside a session: this one
+fil ports devbox --json     # machine-readable (schema 1)
+</code></pre>
+<p>It shows, per session, each forward with the process behind it, the connections, traffic and last use, and what else is listening, with the one command that would forward it. A sample:</p>
+<pre><code class="language-text">SESSION main on devbox — attached from laptop since 09:12
+
+FORWARDED
+  DIR  LAPTOP                REMOTE               OWNER                    CONNS  ↓ / ↑           LAST
+  -L   localhost:5173 →      localhost:5173       vite (pid 41872, ~/app)  2      14 MB / 220 KB  now
+       http://localhost:5173 · HTTP 200 "Vite + React"
+  -R   localhost:9000 ←      127.0.0.1:9000       your laptop              0      —               10:40
+       1 connection waiting for the link
+
+LISTENING IN THIS SESSION, NOT FORWARDED
+  8000  0.0.0.0 ⚠      python3 (pid 42110, ~/tmp)  since 10:03  HTTP 200 "Directory listing for /"
+        ⚠ reachable from outside this host, not just through fil  →  fil forward devbox main -L 8000
+
+AGENT
+  relayed to this client: 1 connection open, 14 requests, last used 10:40
+
+OTHER LISTENERS YOU OWN ON THIS HOST
+  5432  127.0.0.1  postgres (pid 1201), not started from a fil session  Postgres
+</code></pre>
+<ul>
+<li>A <strong>⚠</strong> marks anything bound beyond loopback, and a forward whose target is held by another user’s listener. Another user’s listeners are shown by port and address only.</li>
+<li>A forward the host’s <a href="/docs/policy/">server policy</a> refuses says so on its row, with the setting that decided. Refused forwards and a refused agent are listed under <code>REFUSED BY SERVER POLICY</code>.</li>
+<li>An incomplete answer says why (a host without <code>/proc/net/tcp</code>, a timeout, the 256-row cap).</li>
+<li><strong>Probes.</strong> To label what is listening (TLS, an HTTP <code>HEAD</code>, a Postgres or Redis greeting), fil connects to the listeners that are yours and on loopback: the <code>-L</code> targets and the ones started in a session, at most 300 ms per port. A probe is a real connection: a web framework runs its handler for a <code>HEAD</code>, a one-shot listener is used up, and Postgres logs a line. <code>--probe</code> also probes your other listeners; they are often tunnels (<code>ssh -L</code>, <code>kubectl port-forward</code>), and a probe through one reaches whatever it leads to, so a known forwarder is never probed. <code>probe = "off"</code> in <a href="/docs/daemon/"><code>daemon.toml</code></a> turns probing off altogether.</li>
+</ul>
+<p><code>~#</code>, typed after Enter in a session, shows the forwards and the agent’s use on your terminal.</p>
+<h2 id="who-can-reach-a--r-port">Who can reach a <code>-R</code> port</h2>
+<p>A <code>-R</code> listener on the host is on <code>127.0.0.1</code>, which every user on that host can reach, as with <code>ssh -R</code>. To narrow it to your own connections, set <code>remote_peers = "same-user"</code> in the host’s <a href="/docs/daemon/"><code>daemon.toml</code></a>: a connection from another user, or one whose owner can’t be told, is reset before a byte reaches your machine. On a macOS host there is no way to look the owner up, so under <code>same-user</code> every <code>-R</code> connection is refused.</p>
+<p>A <code>-R</code> bind beyond loopback is honoured only where the host’s <a href="/docs/policy/">server policy</a> allows it (<code>GatewayPorts</code>). The host never learns a <code>-R</code> target on your own network (it sees <code>(client network)</code>), nor a <code>-L</code> or <code>-D</code> bind that is your machine’s own LAN address.</p>  <nav class="docs-pager" aria-label="Previous and next page"> <a class="prev" href="/docs/transports/"><span class="muted">Previous</span>Reconnects and transports</a> <a class="next" href="/docs/agent/"><span class="muted">Next</span>The agent</a> </nav> <p class="docs-source">This page is <a href="https://github.com/anthonytw/fil/blob/v0.2.0/docs/user/forwards.md" target="_blank" rel="noopener noreferrer"><code>docs/user/forwards.md</code></a> in the fil repository, as of fil 0.2.0. Corrections go there.</p> </article> </div> </main> <footer class="site-footer"> <div class="wrap"> <nav aria-label="Footer"> <a href="/docs/">Guide</a> <a href="/docs/install/">Install</a> <a href="/man/">Manual pages</a> <a href="/security/">Security and release keys</a> <a href="/changelog/">Changelog</a> <a href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer">Source on GitHub</a> </nav> <span>Free software under the <a href="https://github.com/anthonytw/fil/blob/v0.2.0/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0-or-later</a>. No cookies, no tracking, nothing loaded from other sites.</span> </div> </footer> </body></html>
