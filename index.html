@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>fil: a remote shell that keeps your place</title>
-<meta name="description" content="fil is a remote shell for development over SSH and QUIC. Sessions survive reconnects, roaming and sleep. Coming soon.">
+<meta name="description" content="fil is a remote shell for development over SSH and QUIC. Sessions survive reconnects, roaming and sleep.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161a1f'/%3E%3Cpath d='M10 40c9 0 9-16 18-16s9 16 18 16 8-10 8-10' fill='none' stroke='%2366d9a8' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
@@ -25,6 +25,7 @@
   .lede { font-size: 20px; margin: 0 0 24px; }
   ul { padding-left: 20px; margin: 0 0 32px; }
   li { margin: 6px 0; }
+  pre { font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code); padding: 12px 14px; border-radius: 8px; overflow-x: auto; margin: 0 0 14px; }
   .soon { display: inline-block; font: 600 13px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); border-radius: 99px; padding: 7px 12px; margin: 0 0 18px; }
   p { margin: 0 0 14px; }
   a { color: var(--accent); }
@@ -44,9 +45,12 @@
     <li>Reattach after a crash, or take a session over from another machine.</li>
     <li>Port forwards that stay open across reconnects.</li>
     <li>Direct QUIC, or a plain SSH pipe when UDP is blocked.</li>
+    <li>Shows what you type before the host echoes it, on slow links (new in 0.2.0).</li>
   </ul>
-  <span class="soon">Coming soon</span>
-  <p>The first release, 0.1.0, is on its way. Until then, the code and the design are on <a href="https://github.com/anthonytw/fil">GitHub</a>.</p>
+  <span class="soon">0.2.0 is out</span>
+  <pre>brew install anthonytw/tap/fil        # macOS, Linux
+cargo install --locked fil-shell       # from source</pre>
+  <p>The .deb and .rpm packages and the signed archives are on the <a href="https://github.com/anthonytw/fil/releases/tag/v0.2.0">0.2.0 release</a>; the <a href="https://github.com/anthonytw/fil/blob/main/docs/user/install.md">install guide</a> covers them, Arch and Nix, and how to check a download. Then <code>fil HOST</code> works like <code>ssh HOST</code>, and offers to put fil on the host the first time. The code, the design and the changes are on <a href="https://github.com/anthonytw/fil">GitHub</a>.</p>
   <footer>
     <p>Releases are signed. Release signing key (ED25519) fingerprint:<br><code>SHA256:Q7KfBHSjAFRimlv46rQuCGxsQF0NHQgLTpBcekwvnp0</code></p>
     <p>Package signing key (OpenPGP, RSA 4096; signs the .rpm packages and <code>SHA256SUMS.asc</code>) fingerprint:<br><code>9EF0 B189 34B7 0552 0F88 80A5 81C0 98D1 5D1A EC26</code></p>
