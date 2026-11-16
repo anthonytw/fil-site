@@ -1,0 +1,14 @@
+Origin: fil
+Label: fil
+Suite: stable
+Codename: stable
+Version: 1.0.0
+Date: Mon, 16 Nov 2026 13:05:26 UTC
+Architectures: amd64 arm64
+Components: main
+Description: fil's own packages, signed with the fil package signing key (https://github.com/anthonytw/fil)
+SHA256:
+ 28632b785e3210d81c257a56466fd0a9690f9cdfd29454094cc7ae00c6d551f6      805 main/binary-amd64/Packages
+ edafe6265b1e2aa26acf300280d402431a7ba4d4eb088c47f4863117466b357b      550 main/binary-amd64/Packages.gz
+ 65a291b186ba3899028ade5b4379684d5a634ae57b6351d850657a51972338ac      805 main/binary-arm64/Packages
+ e85f73688b4de28e414b938c5ddf74e4e77aaf1a52c461d2f9372b28fdabb197      553 main/binary-arm64/Packages.gz

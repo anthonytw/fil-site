@@ -5,17 +5,42 @@
 </figure>
 <h2 id="names-and-lifetime">Names and lifetime</h2>
 <ul>
-<li>A session name is <code>[A-Za-z0-9._-]</code>, 1 to 64 characters. <code>fil HOST</code> with no name is the session <code>main</code>.</li>
+<li>A session name is <code>[A-Za-z0-9._-]</code>, 1 to 64 characters. <code>fil HOST</code> with no name is the session <code>main</code>; <code>fil -N HOST</code> (forwards only, no terminal: see <a href="/docs/forwards/">forwards</a>) is the session <code>tunnel</code>.</li>
 <li>Attaching to a name that does not exist creates it.</li>
 <li>A session lives until its shell exits or you end it with <code>fil kill</code>. Detached sessions stay as long as the daemon does. The daemon exits by itself when it has no sessions and no connections for five minutes (<code>idle_exit_secs</code> in <a href="/docs/daemon/"><code>daemon.toml</code></a>); it does not exit while a session exists.</li>
 <li>The daemon keeps each session’s recent output (1,000 lines by default; <code>history_lines</code> in <code>daemon.toml</code>) in memory, so you can resume or reattach. It is never written to disk.</li>
 <li>If the host reboots, or something kills the daemon, the sessions are gone. A host that kills your processes at logout also does: see <a href="/docs/troubleshooting/">troubleshooting</a>.</li>
 </ul>
 <h2 id="listing-and-ending">Listing and ending</h2>
-<pre><code class="language-sh">fil ls devbox                 # NAME, TERM, FORWARDS, ATTACHED, LAST OUTPUT, CREATED
+<pre><code class="language-sh">fil ls devbox                 # NAME, TERM, FORWARDS, ATTACHED, LAST OUTPUT, CREATED, FIL
 fil kill devbox build         # end "build"
+fil kill --outdated devbox    # end the sessions on daemons older than this fil, after asking
 </code></pre>
 <p><code>fil kill</code> hangs up the session’s shell and everything it started, as closing a terminal would, then kills whatever is left after a short grace. The client attached to it sees the session end.</p>
+<h2 id="after-an-upgrade-daemons-of-several-versions">After an upgrade: daemons of several versions</h2>
+<p>Each version of fil runs its own daemon on a host. After you upgrade, your next connection starts the new version’s daemon beside the old one, and the old daemon keeps its sessions until they end, then exits. Nothing is lost, and nothing has to be ended first:</p>
+<ul>
+<li>
+<p><code>fil ls devbox</code> lists the sessions of every daemon, in one table; the FIL column says which version’s daemon holds each. It asks each daemon over an ssh connection of its own, so with an older daemon running it makes two.</p>
+</li>
+<li>
+<p><code>fil devbox build</code>, and <code>fil kill</code>, <code>fil detach</code>, <code>fil forward</code> and <code>fil ports</code> with a session name, reach that session on whichever daemon holds it. A name no daemon has is a new session on the newest daemon.</p>
+</li>
+<li>
+<p><code>fil kill --outdated devbox</code> ends the sessions on daemons older than your fil, for when the new version fixes something in the daemon (a security fix, say) and the old sessions should not wait to end on their own. It lists them first, with the jobs still running in each, then asks:</p>
+<pre><code class="language-text">sessions on devbox whose daemon is older than this fil (1.1.0):
+  SESSION  FIL    JOBS
+  main     1.0.2  2 running
+  notes    1.0.2  none
+fil: end these 2 sessions and everything running in them? [y/N]
+</code></pre>
+<p><code>y</code> ends them, each on its own daemon; anything else ends nothing (status 1). With stdin not a terminal it ends nothing unless you pass <code>--yes</code> (<code>-y</code>). A daemon from 1.0.0 has no jobs check: its sessions are listed with <code>not checked (fil 1.0.0 cannot report them)</code> and are still ended on <code>y</code>.</p>
+<p>It never reports a host as clean when it could not check all of it. A daemon it could not reach (one of another wire, such as a 0.x daemon, which only that fil version can end; one whose list it could not get; a list cut short because the daemon has very many sessions) is named under “not checked, so not ended”, and the status is then 1 even when every session it did find was ended. If the fil on the host is itself older than yours (only with <code>remote = "plain"</code>), it ends nothing and says to upgrade the host’s fil first, since new sessions would go to that old version again.</p>
+<p>Exit status: 0 when every session on an older daemon was ended, or there was none, and nothing was left unchecked; 1 when it asked nothing (no terminal and no <code>--yes</code>) or you declined, when a kill failed, when a daemon could not be checked, or when the host’s fil is older; 2 on a usage error.</p>
+</li>
+</ul>
+<p>Each of these is a separate ssh login: <code>fil ls</code> makes one per daemon, and <code>fil kill --outdated</code> one per daemon to list them, one per older daemon for its jobs, and one per session it ends (two older daemons with three sessions each: 11). With key or agent authentication that is only time. If ssh asks you for a password, let it share one connection: <code>ControlMaster auto</code>, <code>ControlPath ~/.ssh/cm-%C</code> and <code>ControlPersist 10m</code> in <code>~/.ssh/config</code> for the host, and you are asked once.</p>
+<p>This works when the fil that runs on the host is this version or later, which the install command makes sure of (it runs your own version there). With <code>remote = "plain"</code> and an older fil installed on the host, connections go where that fil sends them: the newest daemon.</p>
 <h2 id="detach">Detach</h2>
 <p>Three ways, which keep the session running:</p>
 <ul>
@@ -72,4 +97,5 @@ fil kill devbox build         # end "build"
 <li><code>2</code> on a usage error;</li>
 <li><code>255</code> if a forward failed and <code>forward_failure = "exit"</code>.</li>
 </ul>
-<p>A host or session named like a subcommand (<code>ls</code>, <code>kill</code>, <code>detach</code>, <code>forward</code>, <code>ports</code>, <code>server</code>, <code>install</code>, <code>config</code>) is attached with <code>--</code>: <code>fil -- ls</code>, <code>fil devbox -- ls</code>.</p>  <nav class="docs-pager" aria-label="Previous and next page"> <a class="prev" href="/docs/quick-start/"><span class="muted">Previous</span>Quick start</a> <a class="next" href="/docs/transports/"><span class="muted">Next</span>Reconnects and transports</a> </nav> <p class="docs-source">This page is <a href="https://github.com/anthonytw/fil/blob/v0.3.0/docs/user/sessions.md" target="_blank" rel="noopener noreferrer"><code>docs/user/sessions.md</code></a> in the fil repository, as of fil 0.3.0. Corrections go there.</p> </article> </div> </main> <footer class="site-footer"> <div class="wrap"> <nav aria-label="Footer"> <a href="/docs/">Guide</a> <a href="/docs/install/">Install</a> <a href="/man/">Manual pages</a> <a href="/security/">Security and release keys</a> <a href="/changelog/">Changelog</a> <a href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer">Source on GitHub</a> <a href="/privacy/">Privacy</a> <a href="/terms/">Terms</a> </nav> <span>© 2026 Anthony Wertz. Free software under the <a href="https://github.com/anthonytw/fil/blob/v0.3.0/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0-or-later</a>, no warranty. No cookies, no tracking, nothing loaded from other sites.</span> </div> </footer> </body></html>
+<p><code>fil -N HOST</code> exits the same way, except that Ctrl-C (or SIGTERM, SIGHUP, SIGQUIT) is how a tunnel is stopped: it detaches, and the status is <code>0</code> (<code>255</code> if it came before the tunnel was attached, as with <code>ssh -N</code>). A tunnel takes over a session whose holder is disconnected without asking, and leaves a connected holder alone (status <code>1</code>) unless you give <code>--take-over</code>, which an unattended tunnel should.</p>
+<p>A host or session named like a subcommand (<code>ls</code>, <code>kill</code>, <code>detach</code>, <code>forward</code>, <code>ports</code>, <code>server</code>, <code>install</code>, <code>config</code>) is attached with <code>--</code>: <code>fil -- ls</code>, <code>fil devbox -- ls</code>.</p>  <nav class="docs-pager" aria-label="Previous and next page"> <a class="prev" href="/docs/quick-start/"><span class="muted">Previous</span>Quick start</a> <a class="next" href="/docs/transports/"><span class="muted">Next</span>Reconnects and transports</a> </nav> <p class="docs-source">This page is <a href="https://github.com/anthonytw/fil/blob/v1.0.0/docs/user/sessions.md" target="_blank" rel="noopener noreferrer"><code>docs/user/sessions.md</code></a> in the fil repository, as of fil 1.0.0. Corrections go there.</p> </article> </div> </main> <footer class="site-footer"> <div class="wrap"> <nav aria-label="Footer"> <a href="/docs/">Guide</a> <a href="/docs/install/">Install</a> <a href="/man/">Manual pages</a> <a href="/security/">Security and release keys</a> <a href="/changelog/">Changelog</a> <a href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer">Source on GitHub</a> <a href="/privacy/">Privacy</a> <a href="/terms/">Terms</a> </nav> <span>© 2026 Anthony Wertz. Free software under the <a href="https://github.com/anthonytw/fil/blob/v1.0.0/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0-or-later</a>, no warranty. No cookies, no tracking, nothing loaded from other sites.</span> </div> </footer> </body></html>

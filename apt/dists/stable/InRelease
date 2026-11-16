@@ -1,0 +1,34 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: fil
+Label: fil
+Suite: stable
+Codename: stable
+Version: 1.0.0
+Date: Mon, 16 Nov 2026 13:05:26 UTC
+Architectures: amd64 arm64
+Components: main
+Description: fil's own packages, signed with the fil package signing key (https://github.com/anthonytw/fil)
+SHA256:
+ 28632b785e3210d81c257a56466fd0a9690f9cdfd29454094cc7ae00c6d551f6      805 main/binary-amd64/Packages
+ edafe6265b1e2aa26acf300280d402431a7ba4d4eb088c47f4863117466b357b      550 main/binary-amd64/Packages.gz
+ 65a291b186ba3899028ade5b4379684d5a634ae57b6351d850657a51972338ac      805 main/binary-arm64/Packages
+ e85f73688b4de28e414b938c5ddf74e4e77aaf1a52c461d2f9372b28fdabb197      553 main/binary-arm64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQJPBAEBCgA5FiEEnvCxiTS3BVIPiIClgcCY0V0a7CYFAmr6/5YbFIAAAAAABAAO
+bWFudTIsMi41KzEuMTIsMCwzAAoJEIHAmNFdGuwmOQ8P/04rxsWAVDj21D91QcJe
+ZMkyPTqTKnTV75xoUDxzrgyV9M8BvDiryNXZY5P4bEkqdp9yFXCjJ3F2ZZwuQd8n
+nyjYbIjMgyJ/m/ykb9cVlla/Ym93Y0tPDv3gZ8Q8eXXJ69tkFMhOina+68DwrUaG
+lOLv8y5sy/PhKgYg5+b0xCmfZbmrj9YX7uD0vjcApUyDYyhTe+PDv9i0YmmFFt9b
+faceX+X3do8LrnrAd09Vz38WCWeA/ARpqosSzGe+8cvWjsXQxQIvYPVCF7OtBnFU
+tN7MAkBN2EXg7YyfdGZPfr40fKZb+b6Fb/TYqHcUqQSJX3Bwps90MtMAn7k8DKw7
+inlU5k/11pGKjyEmP90VoM7fkQTxzvpfLOKZuM6sGegwdCvnOZr/J++5Z28EM8rr
+SMbt3+VbS7IZh5b8xBn5rTnrrpyZv8+vxQ2i0TCR+BGT6jnKJND9c6U6pArfAQ/p
+8+Lu0bQK/ieDTQOTL4EILXgVP/1YxfsXsvSD3S/+HvseIszIP+00TbOo9V4gTqUM
+EdEW/pc+QyCu+Wppl+R3SJzaSXm2jK180FbC8B56X1ylz1nTD24OvYWxLMcUrzW3
+zlbfKdj6rTq+4d3t8H6+THQ0XmQ2UiTVc0ew5Ol0q1KY3pfmz+hJdF3s7Adi/oJU
+3KlQ8g0YnqegWMm97vKLlVoA
+=K2qd
+-----END PGP SIGNATURE-----

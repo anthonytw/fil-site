@@ -10,8 +10,9 @@
 <section class="Sh">
 <h2 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h2>
 <p class="Pp"><b>fil</b> [<b>-L</b> <i>SPEC</i>]... [<b>-R</b> <i>SPEC</i>]...
-    [<b>-D</b> <i>SPEC</i>]... [<b>-A</b>|<b>-a</b>] [<b>--transport</b>
-    <i>MODE</i>] [<b>--config</b> <i>FILE</i>] <i>HOST</i> [<i>SESSION</i>]
+    [<b>-D</b> <i>SPEC</i>]... [<b>-A</b>|<b>-a</b>] [<b>-N</b>]
+    [<b>--transport</b> <i>MODE</i>] [<b>--config</b> <i>FILE</i>] <i>HOST</i>
+    [<i>SESSION</i>]
   <br/>
   <b>fil</b> <i>COMMAND</i> ...</p>
 </section>
@@ -77,6 +78,14 @@
   <dd>Take the session over without asking when another client is attached to it
       (the config's takeover = &quot;always&quot; for this run). By default fil
       asks first</dd>
+  <dt id="N"><a class="permalink" href="#N"><b>-N</b></a></dt>
+  <dd>Tunnel only, as ssh -N: hold the forwards (and the agent relay, with -A)
+      with no terminal, until interrupted. Needs a forward (-L, -R, -D, the
+      config's) or -A. The session defaults to &quot;tunnel&quot;, not
+      &quot;main&quot;, so it never asks to take your shell's session. It asks
+      nothing: a session whose holder is disconnected is taken over, a connected
+      holder is left alone (status 1) unless --take-over is given, which an
+      unattended tunnel should</dd>
   <dt id="config"><a class="permalink" href="#config"><b>--config</b>
     <i>&lt;FILE&gt;</i></a></dt>
   <dd>Read this config file instead of ~/.config/fil/config.toml ($FIL_CONFIG
@@ -100,8 +109,18 @@
 <section class="Ss">
 <h3 class="Ss" id="fil_kill"><a class="permalink" href="#fil_kill">fil
   kill</a></h3>
-<p class="Pp">End a session: its shell and everything it started are killed</p>
-<p class="Pp">Usage: <b>fil kill [OPTIONS] &lt;HOST&gt; &lt;SESSION&gt;</b></p>
+<p class="Pp">End a session: its shell and everything it started are killed.
+    With --outdated: every session on a daemon older than this fil, after
+    showing them with their jobs and asking</p>
+<p class="Pp">Usage: <b>fil kill [OPTIONS] &lt;HOST&gt; [SESSION]</b></p>
+<dl class="Bl-tag">
+  <dt id="outdated"><a class="permalink" href="#outdated"><b>--outdated</b></a></dt>
+  <dd>End every session on HOST whose daemon is an older fil than this one
+      (after an upgrade, say a security fix), after listing them with the jobs
+      left in them and asking</dd>
+  <dt id="y"><a class="permalink" href="#y"><b>-y</b>, <b>--yes</b></a></dt>
+  <dd>With --outdated: do not ask (needed when stdin is not a terminal)</dd>
+</dl>
 </section>
 <section class="Ss">
 <h3 class="Ss" id="fil_detach"><a class="permalink" href="#fil_detach">fil
@@ -216,18 +235,32 @@
 <br/>
   fil kill devbox build      end session &quot;build&quot;
 <br/>
-  fil detach devbox build    detach whoever is attached to &quot;build&quot;</pre>
+  fil detach devbox build    detach whoever is attached to &quot;build&quot;
+<br/>
+  fil -N devbox -L 5432      forward localhost:5432 to devbox, no terminal, until Ctrl-C</pre>
 <p class="Pp">Inside a session, type ~. after a newline to detach; ~? lists the
     escapes.</p>
 <p class="Pp">Configuration: ~/.config/fil/config.toml (see fil-config(5), or
     fil config show HOST). Logs: ~/.local/state/fil/client.log (set
-    FIL_LOG=debug for more).</p>
+    FIL_LOG=debug for more). Upgrading: fil --version names the command for the
+    way this copy was installed (fil never updates itself or checks for
+    updates).</p>
 <p class="Pp">Exit status: 0 on a normal end (detached, or the session ended
     with nothing to report); the shell's own status if it exited with one; 128+N
     if the shell was killed by signal N or fil was stopped by signal N; 1 on an
     error, if the session was taken over, replaced or detached elsewhere, or if
     it is attached elsewhere and you did not take it over; 2 on a usage error;
-    255 if a forward failed and forward_failure = &quot;exit&quot;.</p>
+    255 if a forward failed and forward_failure = &quot;exit&quot;. With -N, a
+    stop signal (Ctrl-C) detaches and exits 0, or 255 before the session is
+    attached. fil kill --outdated exits 0 only when every session on an older
+    daemon was ended (or there was none) and every daemon could be checked; 1
+    when it asked nothing (no terminal, no --yes) or you declined, a kill
+    failed, a daemon could not be checked (each is named), or the host's own fil
+    is older than this one. After an upgrade, fil ls HOST and fil kill
+    --outdated make one ssh connection per daemon (kill --outdated also one per
+    older daemon for its jobs and one per session it ends): with a password
+    login, set ControlMaster auto and ControlPersist in ~/.ssh/config to be
+    asked once.</p>
 <p class="Pp">Source: every release publishes fil-&lt;version&gt;-source.tar.gz
     beside the binaries (GPL-3.0 Corresponding Source).</p>
 </section>
@@ -240,4 +273,4 @@
 <div class="foot" role="doc-pagefooter" aria-label="Manual footer
   line"><span class="foot-left">fil</span> <span class="foot-date"></span>
   <span class="foot-right">FIL(1)</span></div>
- <p class="docs-source">Rendered from <a href="https://github.com/anthonytw/fil/blob/v0.3.0/docs/man/fil.1" target="_blank" rel="noopener noreferrer"><code>docs/man/fil.1</code></a> in the fil repository, which the command line generates.</p> </article></div> </main> <footer class="site-footer"> <div class="wrap"> <nav aria-label="Footer"> <a href="/docs/">Guide</a> <a href="/docs/install/">Install</a> <a href="/man/">Manual pages</a> <a href="/security/">Security and release keys</a> <a href="/changelog/">Changelog</a> <a href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer">Source on GitHub</a> <a href="/privacy/">Privacy</a> <a href="/terms/">Terms</a> </nav> <span>© 2026 Anthony Wertz. Free software under the <a href="https://github.com/anthonytw/fil/blob/v0.3.0/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0-or-later</a>, no warranty. No cookies, no tracking, nothing loaded from other sites.</span> </div> </footer> </body></html>
+ <p class="docs-source">Rendered from <a href="https://github.com/anthonytw/fil/blob/v1.0.0/docs/man/fil.1" target="_blank" rel="noopener noreferrer"><code>docs/man/fil.1</code></a> in the fil repository, which the command line generates.</p> </article></div> </main> <footer class="site-footer"> <div class="wrap"> <nav aria-label="Footer"> <a href="/docs/">Guide</a> <a href="/docs/install/">Install</a> <a href="/man/">Manual pages</a> <a href="/security/">Security and release keys</a> <a href="/changelog/">Changelog</a> <a href="https://github.com/anthonytw/fil" target="_blank" rel="noopener noreferrer">Source on GitHub</a> <a href="/privacy/">Privacy</a> <a href="/terms/">Terms</a> </nav> <span>© 2026 Anthony Wertz. Free software under the <a href="https://github.com/anthonytw/fil/blob/v1.0.0/LICENSE" target="_blank" rel="noopener noreferrer">GPL-3.0-or-later</a>, no warranty. No cookies, no tracking, nothing loaded from other sites.</span> </div> </footer> </body></html>

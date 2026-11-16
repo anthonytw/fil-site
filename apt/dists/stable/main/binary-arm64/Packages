@@ -1,0 +1,18 @@
+Package: fil
+Version: 1.0.0-1
+Section: net
+Priority: optional
+Architecture: arm64
+Maintainer: Anthony Wertz <me@mail.anthonywertz.com>
+Installed-Size: 27867
+Homepage: https://github.com/anthonytw/fil
+Filename: pool/main/f/fil/fil_1.0.0_arm64.deb
+Size: 13988242
+MD5sum: ddec39dee4145831c914a991e7f9adf7
+SHA1: 17ec5587a298cc2431dc454c217f12adcae7f27f
+SHA256: 4aadf7b2ceb930a53554b86ca12353456ca226cf91f105a6d30bc896e702f52d
+Description: A remote shell for development over SSH
+ fil keeps your place on a remote host: sessions survive reconnects, roaming and
+ sleep, you can take one over from another machine, and port forwards outlive the
+ link. It runs over ssh, or directly over QUIC. The package installs the static
+ fil binary and the remote bundle (both Linux architectures) that fil install uploads.
